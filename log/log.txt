@@ -1,0 +1,573 @@
+Added circle
+Added rectangle
+Connection mode activated
+First shape selected for connection
+Connected shapes with a line
+
+=== Distances entre les formes connectées ===
+Distance entre Circle et Rectangle = 101.4 pixels
+Total: 1 connexions
+===============================
+
+Added triangle
+Moved shape to (117.60000000000002, 353.59999999999997)
+Connection mode activated
+First shape selected for connection
+Moved shape to (117.60000000000002, 353.59999999999997)
+Connected shapes with a line
+Moved shape to (156.80000000000007, 331.2)
+Moved shape to (110.40000000000009, 348.79999999999995)
+
+=== Distances entre les formes connectées ===
+Distance entre Circle et Rectangle = 101.4 pixels
+Distance entre Circle et Triangle = 134.3 pixels
+Total: 2 connexions
+===============================
+
+Connection mode activated
+First shape selected for connection
+Moved shape to (110.40000000000009, 348.79999999999995)
+Connected shapes with a line
+Moved shape to (110.40000000000009, 348.79999999999995)
+Added rectangle
+Moved shape to (405.5999999999999, 128.0)
+Connection mode activated
+First shape selected for connection
+Moved shape to (405.5999999999999, 128.0)
+Connected shapes with a line
+Moved shape to (405.5999999999999, 128.0)
+Connection mode activated
+First shape selected for connection
+Moved shape to (405.5999999999999, 128.0)
+Connected shapes with a line
+Moved shape to (405.5999999999999, 128.0)
+
+=== Distances entre les formes connectées ===
+Distance entre Circle et Rectangle = 101.4 pixels
+Distance entre Circle et Triangle = 134.3 pixels
+Distance entre Rectangle et Triangle = 195.8 pixels
+Distance entre Circle et Rectangle = 177.8 pixels
+Distance entre Rectangle et Rectangle = 201.8 pixels
+Total: 5 connexions
+===============================
+
+Moved shape to (200.0, 200.0)
+Changed shape color to: 0x000080ff
+[2025-06-08 01:42:18] Added circle
+Added rectangle
+Connection mode activated
+First shape selected for connection
+Connected shapes with a line
+Drawing saved to database.
+Drawing loaded from database.
+
+[2025-06-08 01:42:25] Added circle
+Added rectangle
+Connection mode activated
+First shape selected for connection
+Connected shapes with a line
+Drawing saved to database.
+Drawing loaded from database.
+
+[2025-06-08 01:42:27] Added circle
+Added rectangle
+Connection mode activated
+First shape selected for connection
+Connected shapes with a line
+Drawing saved to database.
+Drawing loaded from database.
+
+[2025-06-08 01:42:27] Log saved to file.
+[2025-06-08 01:42:37] Added rectangle
+[2025-06-08 01:42:40] Moved shape to (344.0, 110.40000000000003)
+[2025-06-08 01:42:41] Connection mode activated
+[2025-06-08 01:42:41] First shape selected for connection
+[2025-06-08 01:42:42] Moved shape to (344.0, 110.40000000000003)
+[2025-06-08 01:42:42] Connected shapes with a line
+[2025-06-08 01:42:42] Moved shape to (194.39999999999998, 168.00000000000003)
+[2025-06-08 01:42:49] Moved shape to (345.6, 56.800000000000026)
+[2025-06-08 01:42:54] 
+=== Distances entre les formes connectées ===
+[2025-06-08 01:42:54] Distance entre Circle et Rectangle = 101.4 pixels
+[2025-06-08 01:42:54] Ligne trouvée mais pas de forme aux extrémités :
+[2025-06-08 01:42:54]   Début : (344.0, 110.4)
+[2025-06-08 01:42:54]   Fin : (234.0, 178.9)
+[2025-06-08 01:42:54] Total: 1 connexions
+[2025-06-08 01:42:54] ===============================
+
+[2025-06-08 01:42:56] 
+=== Distances entre les formes connectées ===
+[2025-06-08 01:42:56] Distance entre Circle et Rectangle = 101.4 pixels
+[2025-06-08 01:42:56] Ligne trouvée mais pas de forme aux extrémités :
+[2025-06-08 01:42:56]   Début : (344.0, 110.4)
+[2025-06-08 01:42:56]   Fin : (234.0, 178.9)
+[2025-06-08 01:42:56] Total: 1 connexions
+[2025-06-08 01:42:56] ===============================
+
+[2025-06-08 01:43:03] Changed shape color to: 0xff00ffff
+[2025-06-08 01:43:04] 
+=== Distances entre les formes connectées ===
+[2025-06-08 01:43:04] Distance entre Circle et Rectangle = 101.4 pixels
+[2025-06-08 01:43:04] Ligne trouvée mais pas de forme aux extrémités :
+[2025-06-08 01:43:04]   Début : (344.0, 110.4)
+[2025-06-08 01:43:04]   Fin : (234.0, 178.9)
+[2025-06-08 01:43:04] Total: 1 connexions
+[2025-06-08 01:43:04] ===============================
+
+[2025-06-08 01:43:06] Toggled distance display
+[2025-06-08 01:43:06] Toggled distance display
+[2025-06-08 01:43:08] Drawing loaded from database.
+[2025-06-08 01:43:15] Drawing saved to database.
+[2025-06-08 01:43:19] Added rectangle
+[2025-06-08 01:43:22] Moved shape to (356.0, 90.39999999999999)
+[2025-06-08 01:43:23] Connection mode activated
+[2025-06-08 01:43:24] First shape selected for connection
+[2025-06-08 01:43:24] Connected shapes with a line
+[2025-06-08 01:43:30] Drawing saved to database.
+[2025-06-08 01:43:34] Drawing saved to database.
+[2025-06-08 01:43:35] Drawing loaded from database.
+[2025-06-08 01:48:41] Added circle
+Added rectangle
+Connection mode activated
+First shape selected for connection
+Connected shapes with a line
+
+=== Distances entre les formes connectées ===
+Distance entre Circle et Rectangle = 101.4 pixels
+Total: 1 connexions
+===============================
+
+Drawing saved to database.
+
+[2025-06-08 01:48:45] Log strategy changed to File.
+[2025-06-08 01:49:00] Added circle
+Added rectangle
+Connection mode activated
+First shape selected for connection
+Connected shapes with a line
+
+=== Distances entre les formes connectées ===
+Distance entre Circle et Rectangle = 101.4 pixels
+Total: 1 connexions
+===============================
+
+Drawing saved to database.
+Log area content saved to file.
+
+[2025-06-08 01:50:42] Added circle
+Added rectangle
+Connection mode activated
+First shape selected for connection
+Connected shapes with a line
+
+=== Distances entre les formes connectées ===
+Distance entre Circle et Rectangle = 101.4 pixels
+Total: 1 connexions
+===============================
+
+Drawing saved to database.
+Log area content saved to file.
+
+[2025-06-08 01:50:48] Log strategy changed to File.
+[2025-06-08 01:50:50] Drawing saved to database.
+[2025-06-08 01:50:53] 
+=== Distances entre les formes connectées ===
+[2025-06-08 01:50:53] Distance entre Circle et Rectangle = 101.4 pixels
+[2025-06-08 01:50:53] Distance entre Circle et Rectangle = 162.4 pixels
+[2025-06-08 01:50:53] Distance entre Rectangle et Rectangle = 266.8 pixels
+[2025-06-08 01:50:53] Total: 3 connexions
+[2025-06-08 01:50:53] ===============================
+
+[2025-06-08 02:05:32] Added circle
+Added rectangle
+Connection mode activated
+First shape selected for connection
+Connected shapes with a line
+Added triangle
+Moved shape to (113.59999999999991, 392.0)
+Connection mode activated
+First shape selected for connection
+Moved shape to (113.59999999999991, 392.0)
+Connected shapes with a line
+Moved shape to (113.59999999999991, 392.0)
+
+=== Distances entre les formes connectées ===
+Distance entre Circle et Rectangle = 101.4 pixels
+Distance entre Rectangle et Triangle = 207.9 pixels
+Total: 2 connexions
+===============================
+
+
+[2025-06-08 02:09:19] Added circle
+Added rectangle
+Added triangle
+Moved shape to (107.19999999999993, 355.2)
+Connection mode activated
+First shape selected for connection
+Connected shapes with a line
+Connection mode activated
+First shape selected for connection
+Connected shapes with a line
+Connection mode activated
+First shape selected for connection
+Connected shapes with a line
+
+=== Distances entre les formes connectées ===
+Forme trouvée: Circle aux coordonnées (179.47224154610086, 234.3309063797968)
+Forme trouvée: Triangle aux coordonnées (107.19999999999993, 355.2)
+Distance entre Circle et Triangle = 140.8 pixels
+Forme trouvée: Rectangle aux coordonnées (300.0, 300.0)
+Forme trouvée: Triangle aux coordonnées (107.19999999999993, 355.2)
+Distance entre Rectangle et Triangle = 200.5 pixels
+Forme trouvée: Circle aux coordonnées (228.2842712474619, 228.2842712474619)
+Forme trouvée: Rectangle aux coordonnées (300.0, 300.0)
+Distance entre Circle et Rectangle = 101.4 pixels
+Total: 3 connexions
+===============================
+
+Drawing saved to database.
+Drawing loaded from database.
+
+=== Distances entre les formes connectées ===
+Forme trouvée: Circle aux coordonnées (179.47224154610086, 234.3309063797968)
+Forme trouvée: Triangle aux coordonnées (107.19999999999993, 355.2)
+Distance entre Circle et Triangle = 140.8 pixels
+Forme trouvée: Rectangle aux coordonnées (300.0, 300.0)
+Forme trouvée: Triangle aux coordonnées (107.19999999999993, 355.2)
+Distance entre Rectangle et Triangle = 200.5 pixels
+Forme trouvée: Circle aux coordonnées (228.2842712474619, 228.2842712474619)
+Forme trouvée: Rectangle aux coordonnées (300.0, 300.0)
+Distance entre Circle et Rectangle = 101.4 pixels
+Total: 3 connexions
+===============================
+
+Toggled distance display
+Toggled distance display
+
+[2025-06-08 02:09:21] Added circle
+Added rectangle
+Added triangle
+Moved shape to (107.19999999999993, 355.2)
+Connection mode activated
+First shape selected for connection
+Connected shapes with a line
+Connection mode activated
+First shape selected for connection
+Connected shapes with a line
+Connection mode activated
+First shape selected for connection
+Connected shapes with a line
+
+=== Distances entre les formes connectées ===
+Forme trouvée: Circle aux coordonnées (179.47224154610086, 234.3309063797968)
+Forme trouvée: Triangle aux coordonnées (107.19999999999993, 355.2)
+Distance entre Circle et Triangle = 140.8 pixels
+Forme trouvée: Rectangle aux coordonnées (300.0, 300.0)
+Forme trouvée: Triangle aux coordonnées (107.19999999999993, 355.2)
+Distance entre Rectangle et Triangle = 200.5 pixels
+Forme trouvée: Circle aux coordonnées (228.2842712474619, 228.2842712474619)
+Forme trouvée: Rectangle aux coordonnées (300.0, 300.0)
+Distance entre Circle et Rectangle = 101.4 pixels
+Total: 3 connexions
+===============================
+
+Drawing saved to database.
+Drawing loaded from database.
+
+=== Distances entre les formes connectées ===
+Forme trouvée: Circle aux coordonnées (179.47224154610086, 234.3309063797968)
+Forme trouvée: Triangle aux coordonnées (107.19999999999993, 355.2)
+Distance entre Circle et Triangle = 140.8 pixels
+Forme trouvée: Rectangle aux coordonnées (300.0, 300.0)
+Forme trouvée: Triangle aux coordonnées (107.19999999999993, 355.2)
+Distance entre Rectangle et Triangle = 200.5 pixels
+Forme trouvée: Circle aux coordonnées (228.2842712474619, 228.2842712474619)
+Forme trouvée: Rectangle aux coordonnées (300.0, 300.0)
+Distance entre Circle et Rectangle = 101.4 pixels
+Total: 3 connexions
+===============================
+
+Toggled distance display
+Toggled distance display
+Log area content saved to file.
+
+[2025-06-08 02:09:24] Added circle
+Added rectangle
+Added triangle
+Moved shape to (107.19999999999993, 355.2)
+Connection mode activated
+First shape selected for connection
+Connected shapes with a line
+Connection mode activated
+First shape selected for connection
+Connected shapes with a line
+Connection mode activated
+First shape selected for connection
+Connected shapes with a line
+
+=== Distances entre les formes connectées ===
+Forme trouvée: Circle aux coordonnées (179.47224154610086, 234.3309063797968)
+Forme trouvée: Triangle aux coordonnées (107.19999999999993, 355.2)
+Distance entre Circle et Triangle = 140.8 pixels
+Forme trouvée: Rectangle aux coordonnées (300.0, 300.0)
+Forme trouvée: Triangle aux coordonnées (107.19999999999993, 355.2)
+Distance entre Rectangle et Triangle = 200.5 pixels
+Forme trouvée: Circle aux coordonnées (228.2842712474619, 228.2842712474619)
+Forme trouvée: Rectangle aux coordonnées (300.0, 300.0)
+Distance entre Circle et Rectangle = 101.4 pixels
+Total: 3 connexions
+===============================
+
+Drawing saved to database.
+Drawing loaded from database.
+
+=== Distances entre les formes connectées ===
+Forme trouvée: Circle aux coordonnées (179.47224154610086, 234.3309063797968)
+Forme trouvée: Triangle aux coordonnées (107.19999999999993, 355.2)
+Distance entre Circle et Triangle = 140.8 pixels
+Forme trouvée: Rectangle aux coordonnées (300.0, 300.0)
+Forme trouvée: Triangle aux coordonnées (107.19999999999993, 355.2)
+Distance entre Rectangle et Triangle = 200.5 pixels
+Forme trouvée: Circle aux coordonnées (228.2842712474619, 228.2842712474619)
+Forme trouvée: Rectangle aux coordonnées (300.0, 300.0)
+Distance entre Circle et Rectangle = 101.4 pixels
+Total: 3 connexions
+===============================
+
+Toggled distance display
+Toggled distance display
+Log area content saved to file.
+
+[2025-06-08 02:09:27] Added circle
+Added rectangle
+Added triangle
+Moved shape to (107.19999999999993, 355.2)
+Connection mode activated
+First shape selected for connection
+Connected shapes with a line
+Connection mode activated
+First shape selected for connection
+Connected shapes with a line
+Connection mode activated
+First shape selected for connection
+Connected shapes with a line
+
+=== Distances entre les formes connectées ===
+Forme trouvée: Circle aux coordonnées (179.47224154610086, 234.3309063797968)
+Forme trouvée: Triangle aux coordonnées (107.19999999999993, 355.2)
+Distance entre Circle et Triangle = 140.8 pixels
+Forme trouvée: Rectangle aux coordonnées (300.0, 300.0)
+Forme trouvée: Triangle aux coordonnées (107.19999999999993, 355.2)
+Distance entre Rectangle et Triangle = 200.5 pixels
+Forme trouvée: Circle aux coordonnées (228.2842712474619, 228.2842712474619)
+Forme trouvée: Rectangle aux coordonnées (300.0, 300.0)
+Distance entre Circle et Rectangle = 101.4 pixels
+Total: 3 connexions
+===============================
+
+Drawing saved to database.
+Drawing loaded from database.
+
+=== Distances entre les formes connectées ===
+Forme trouvée: Circle aux coordonnées (179.47224154610086, 234.3309063797968)
+Forme trouvée: Triangle aux coordonnées (107.19999999999993, 355.2)
+Distance entre Circle et Triangle = 140.8 pixels
+Forme trouvée: Rectangle aux coordonnées (300.0, 300.0)
+Forme trouvée: Triangle aux coordonnées (107.19999999999993, 355.2)
+Distance entre Rectangle et Triangle = 200.5 pixels
+Forme trouvée: Circle aux coordonnées (228.2842712474619, 228.2842712474619)
+Forme trouvée: Rectangle aux coordonnées (300.0, 300.0)
+Distance entre Circle et Rectangle = 101.4 pixels
+Total: 3 connexions
+===============================
+
+Toggled distance display
+Toggled distance display
+Log area content saved to file.
+Log strategy changed to Console.
+
+[2025-06-08 02:47:07] Added circle
+Graphe reconstruit avec 1 nœuds.
+Added rectangle
+Graphe reconstruit avec 2 nœuds.
+Added circle
+Graphe reconstruit avec 3 nœuds.
+Added circle
+Graphe reconstruit avec 4 nœuds.
+Forme trouvée: Circle aux coordonnées (180.0, 209.6)
+Nœud de départ sélectionné pour le plus court chemin: Circle (ID: 1)
+Forme trouvée: Circle aux coordonnées (185.60000000000002, 229.6)
+Forme trouvée: Circle aux coordonnées (208.79999999999995, 195.2)
+Forme trouvée: Circle aux coordonnées (208.79999999999995, 192.0)
+Forme trouvée: Circle aux coordonnées (196.0, 204.0)
+Forme trouvée: Rectangle aux coordonnées (341.6, 323.2)
+Nœud d'arrivée sélectionné pour le plus court chemin: Rectangle (ID: 2)
+Moved shape to (149.60000000000002, 327.2)
+Moved shape to (520.8, 264.0)
+Moved shape to (388.79999999999995, 108.80000000000001)
+Moved shape to (335.19999999999993, 368.79999999999995)
+Moved shape to (280.79999999999995, 356.79999999999995)
+Connection mode activated
+First shape selected for connection
+Moved shape to (164.79999999999995, 171.2)
+Connected shapes with a line
+Graphe reconstruit avec 4 nœuds.
+Moved shape to (164.79999999999995, 171.2)
+Connection mode activated
+First shape selected for connection
+Moved shape to (164.79999999999995, 171.2)
+Connected shapes with a line
+Graphe reconstruit avec 4 nœuds.
+Moved shape to (164.79999999999995, 171.2)
+Moved shape to (296.0, 335.2)
+Connection mode activated
+First shape selected for connection
+Moved shape to (296.0, 335.2)
+Connected shapes with a line
+Graphe reconstruit avec 4 nœuds.
+Moved shape to (296.0, 335.2)
+Connection mode activated
+First shape selected for connection
+Connected shapes with a line
+Graphe reconstruit avec 4 nœuds.
+Connection mode activated
+First shape selected for connection
+Connected shapes with a line
+Graphe reconstruit avec 4 nœuds.
+Mode sélection du nœud de départ activé.
+Forme trouvée: Circle aux coordonnées (373.6, 143.2)
+Nœud de départ sélectionné pour le plus court chemin: Circle (ID: 3)
+Mode sélection du nœud d'arrivée activé.
+Forme trouvée: Rectangle aux coordonnées (322.4, 382.4)
+Nœud d'arrivée sélectionné pour le plus court chemin: Rectangle (ID: 2)
+Calcul du plus court chemin...
+Plus court chemin trouvé: Circle(3) -> Rectangle(2) (Distance: 204.7)
+Drawing saved to database.
+
+[2025-06-08 02:47:24] Log strategy changed to File.
+[2025-06-08 02:47:31] Added circle
+Graphe reconstruit avec 1 nœuds.
+Added rectangle
+Graphe reconstruit avec 2 nœuds.
+Added circle
+Graphe reconstruit avec 3 nœuds.
+Added circle
+Graphe reconstruit avec 4 nœuds.
+Forme trouvée: Circle aux coordonnées (180.0, 209.6)
+Nœud de départ sélectionné pour le plus court chemin: Circle (ID: 1)
+Forme trouvée: Circle aux coordonnées (185.60000000000002, 229.6)
+Forme trouvée: Circle aux coordonnées (208.79999999999995, 195.2)
+Forme trouvée: Circle aux coordonnées (208.79999999999995, 192.0)
+Forme trouvée: Circle aux coordonnées (196.0, 204.0)
+Forme trouvée: Rectangle aux coordonnées (341.6, 323.2)
+Nœud d'arrivée sélectionné pour le plus court chemin: Rectangle (ID: 2)
+Moved shape to (149.60000000000002, 327.2)
+Moved shape to (520.8, 264.0)
+Moved shape to (388.79999999999995, 108.80000000000001)
+Moved shape to (335.19999999999993, 368.79999999999995)
+Moved shape to (280.79999999999995, 356.79999999999995)
+Connection mode activated
+First shape selected for connection
+Moved shape to (164.79999999999995, 171.2)
+Connected shapes with a line
+Graphe reconstruit avec 4 nœuds.
+Moved shape to (164.79999999999995, 171.2)
+Connection mode activated
+First shape selected for connection
+Moved shape to (164.79999999999995, 171.2)
+Connected shapes with a line
+Graphe reconstruit avec 4 nœuds.
+Moved shape to (164.79999999999995, 171.2)
+Moved shape to (296.0, 335.2)
+Connection mode activated
+First shape selected for connection
+Moved shape to (296.0, 335.2)
+Connected shapes with a line
+Graphe reconstruit avec 4 nœuds.
+Moved shape to (296.0, 335.2)
+Connection mode activated
+First shape selected for connection
+Connected shapes with a line
+Graphe reconstruit avec 4 nœuds.
+Connection mode activated
+First shape selected for connection
+Connected shapes with a line
+Graphe reconstruit avec 4 nœuds.
+Mode sélection du nœud de départ activé.
+Forme trouvée: Circle aux coordonnées (373.6, 143.2)
+Nœud de départ sélectionné pour le plus court chemin: Circle (ID: 3)
+Mode sélection du nœud d'arrivée activé.
+Forme trouvée: Rectangle aux coordonnées (322.4, 382.4)
+Nœud d'arrivée sélectionné pour le plus court chemin: Rectangle (ID: 2)
+Calcul du plus court chemin...
+Plus court chemin trouvé: Circle(3) -> Rectangle(2) (Distance: 204.7)
+Drawing saved to database.
+Log area content saved to file.
+
+[2025-06-08 02:47:31] Log area content saved to file.
+[2025-06-08 02:47:59] Moved shape to (298.4, 371.2)
+[2025-06-08 02:48:00] Moved shape to (548.0, 284.8)
+[2025-06-08 02:48:03] Moved shape to (161.60000000000002, 188.8)
+[2025-06-08 02:48:04] Moved shape to (399.20000000000005, 101.6)
+[2025-06-08 02:48:07] Moved shape to (283.9999999999999, 376.8)
+[2025-06-08 02:48:08] Moved shape to (271.1999999999998, 403.20000000000005)
+[2025-06-08 02:48:11] Calcul du plus court chemin...
+[2025-06-08 02:48:11] Plus court chemin trouvé: Circle(3) -> Rectangle(2) (Distance: 287.7)
+[2025-06-08 02:48:16] 
+=== Distances entre les formes connectées ===
+[2025-06-08 02:48:16] Point dans la boîte englobante mais pas dans la forme: Circle aux coordonnées (199.32941356655635, 175.51499522304357)
+[2025-06-08 02:48:16] Aucune forme trouvée aux coordonnées (199.32941356655635, 175.51499522304357)
+[2025-06-08 02:48:16] Forme trouvée: Circle aux coordonnées (361.6490355308856, 115.3813303943888)
+[2025-06-08 02:48:16] Ligne trouvée mais pas de forme aux extrémités : S(199.32941356655635, 175.51499522304357) E(361.6490355308856, 115.3813303943888)
+[2025-06-08 02:48:16]   Forme de début non trouvée pour le point (199.32941356655635, 175.51499522304357).
+[2025-06-08 02:48:16] Forme trouvée: Rectangle aux coordonnées (271.1999999999998, 403.20000000000005)
+[2025-06-08 02:48:16] Forme trouvée: Circle aux coordonnées (510.2005570623897, 297.88442255532664)
+[2025-06-08 02:48:16] Distance entre Rectangle et Circle = 261.2 pixels
+[2025-06-08 02:48:16] Forme trouvée: Circle aux coordonnées (185.60000000000002, 220.8)
+[2025-06-08 02:48:16] Forme trouvée: Rectangle aux coordonnées (271.1999999999998, 403.20000000000005)
+[2025-06-08 02:48:16] Distance entre Circle et Rectangle = 201.5 pixels
+[2025-06-08 02:48:16] Forme trouvée: Circle aux coordonnées (424.4186003287999, 132.64870685642566)
+[2025-06-08 02:48:16] Point dans la boîte englobante mais pas dans la forme: Circle aux coordonnées (521.1669979337688, 255.1353746001465)
+[2025-06-08 02:48:16] Aucune forme trouvée aux coordonnées (521.1669979337688, 255.1353746001465)
+[2025-06-08 02:48:16] Ligne trouvée mais pas de forme aux extrémités : S(424.4186003287999, 132.64870685642566) E(521.1669979337688, 255.1353746001465)
+[2025-06-08 02:48:16]   Forme de fin non trouvée pour le point (521.1669979337688, 255.1353746001465).
+[2025-06-08 02:48:16] Forme trouvée: Circle aux coordonnées (385.19162056939854, 139.06685609613248)
+[2025-06-08 02:48:16] Forme trouvée: Rectangle aux coordonnées (271.1999999999998, 403.20000000000005)
+[2025-06-08 02:48:16] Distance entre Circle et Rectangle = 287.7 pixels
+[2025-06-08 02:48:16] Total: 3 connexions
+[2025-06-08 02:48:16] ===============================
+
+[2025-06-08 02:48:30] Mode sélection du nœud de départ activé.
+[2025-06-08 02:48:30] Forme trouvée: Circle aux coordonnées (180.79999999999995, 185.6)
+[2025-06-08 02:48:30] Nœud de départ sélectionné pour le plus court chemin: Circle (ID: 4)
+[2025-06-08 02:48:32] Mode sélection du nœud d'arrivée activé.
+[2025-06-08 02:48:33] Point dans la boîte englobante mais pas dans la forme: Circle aux coordonnées (506.4, 294.4)
+[2025-06-08 02:48:33] Aucune forme trouvée aux coordonnées (506.4, 294.4)
+[2025-06-08 02:48:35] Forme trouvée: Circle aux coordonnées (555.2, 290.4)
+[2025-06-08 02:48:35] Nœud d'arrivée sélectionné pour le plus court chemin: Circle (ID: 1)
+[2025-06-08 02:48:37] Calcul du plus court chemin...
+[2025-06-08 02:48:37] Plus court chemin trouvé: Circle(4) -> Circle(3) -> Circle(1) (Distance: 329.2)
+[2025-06-08 02:48:42] 
+=== Distances entre les formes connectées ===
+[2025-06-08 02:48:42] Point dans la boîte englobante mais pas dans la forme: Circle aux coordonnées (199.32941356655635, 175.51499522304357)
+[2025-06-08 02:48:42] Aucune forme trouvée aux coordonnées (199.32941356655635, 175.51499522304357)
+[2025-06-08 02:48:42] Forme trouvée: Circle aux coordonnées (361.6490355308856, 115.3813303943888)
+[2025-06-08 02:48:42] Ligne trouvée mais pas de forme aux extrémités : S(199.32941356655635, 175.51499522304357) E(361.6490355308856, 115.3813303943888)
+[2025-06-08 02:48:42]   Forme de début non trouvée pour le point (199.32941356655635, 175.51499522304357).
+[2025-06-08 02:48:42] Forme trouvée: Rectangle aux coordonnées (271.1999999999998, 403.20000000000005)
+[2025-06-08 02:48:42] Forme trouvée: Circle aux coordonnées (510.2005570623897, 297.88442255532664)
+[2025-06-08 02:48:42] Distance entre Rectangle et Circle = 261.2 pixels
+[2025-06-08 02:48:42] Forme trouvée: Circle aux coordonnées (185.60000000000002, 220.8)
+[2025-06-08 02:48:42] Forme trouvée: Rectangle aux coordonnées (271.1999999999998, 403.20000000000005)
+[2025-06-08 02:48:42] Distance entre Circle et Rectangle = 201.5 pixels
+[2025-06-08 02:48:42] Forme trouvée: Circle aux coordonnées (424.4186003287999, 132.64870685642566)
+[2025-06-08 02:48:42] Point dans la boîte englobante mais pas dans la forme: Circle aux coordonnées (521.1669979337688, 255.1353746001465)
+[2025-06-08 02:48:42] Aucune forme trouvée aux coordonnées (521.1669979337688, 255.1353746001465)
+[2025-06-08 02:48:42] Ligne trouvée mais pas de forme aux extrémités : S(424.4186003287999, 132.64870685642566) E(521.1669979337688, 255.1353746001465)
+[2025-06-08 02:48:42]   Forme de fin non trouvée pour le point (521.1669979337688, 255.1353746001465).
+[2025-06-08 02:48:42] Forme trouvée: Circle aux coordonnées (385.19162056939854, 139.06685609613248)
+[2025-06-08 02:48:42] Forme trouvée: Rectangle aux coordonnées (271.1999999999998, 403.20000000000005)
+[2025-06-08 02:48:42] Distance entre Circle et Rectangle = 287.7 pixels
+[2025-06-08 02:48:42] Total: 3 connexions
+[2025-06-08 02:48:42] ===============================
+
