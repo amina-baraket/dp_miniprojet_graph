@@ -47,7 +47,7 @@ public class CircleVertex extends Shape{
     @Override
     public boolean contains(double pointX, double pointY) {
         double distance = Math.sqrt(Math.pow(pointX - x, 2) + Math.pow(pointY - y, 2));
-        return distance <= radius;
+        return distance <= radius + 5.0;
     }
     
     @Override

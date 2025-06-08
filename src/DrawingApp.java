@@ -18,13 +18,18 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.stage.FileChooser;
 
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.FileReader;
+import java.io.BufferedReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -40,6 +45,7 @@ import main.java.model.strategy.FileLogStrategy;
 import main.java.model.strategy.DatabaseLogStrategy;
 import main.java.model.database.DatabaseManager;
 import main.java.model.observer.Observer;
+import main.java.model.tools.ToolType;
 
 public class DrawingApp extends Application implements Observer {
 
@@ -50,11 +56,25 @@ public class DrawingApp extends Application implements Observer {
     private TextArea logArea;
     private ColorPicker colorPicker;
     private Canvas canvas;
-    private boolean isConnecting = false;  // Mode de connexion actif/inactif
     private Shape shortestPathStartNode = null; // Nouveau : nœud de départ pour le plus court chemin
     private Shape shortestPathEndNode = null;   // Nouveau : nœud de fin pour le plus court chemin
     private List<Shape> currentShortestPath = new ArrayList<>(); // Nouveau : pour stocker le chemin trouvé
     private double currentShortestDistance = Double.POSITIVE_INFINITY; // Nouveau : pour stocker la distance
+
+    // Classe interne pour aider à la reconnexion des lignes après le chargement des formes
+    private static class LineDataForReconnect {
+        Line line;
+        int startShapeId;
+        int endShapeId;
+
+        LineDataForReconnect(Line line, int startShapeId, int endShapeId) {
+            this.line = line;
+            this.startShapeId = startShapeId;
+            this.endShapeId = endShapeId;
+        }
+    }
+
+    private ToolType currentTool = ToolType.NONE; // Initialisation du nouvel attribut
 
     private final TextField widthField = new TextField();
     private final TextField heightField = new TextField();
@@ -85,7 +105,6 @@ public class DrawingApp extends Application implements Observer {
         Button addRectBtn = new Button("Add Rectangle");
         Button addTriangleBtn = new Button("Add Triangle");
         Button saveLogBtn = new Button("Save Log");
-        Button connectBtn = new Button("Connect Shapes");
         Button toggleDistanceBtn = new Button("Toggle Distances");
         Button showDistancesBtn = new Button("Show All Distances");
         Button saveToDbBtn = new Button("Save to DB"); // Nouveau bouton
@@ -95,6 +114,10 @@ public class DrawingApp extends Application implements Observer {
         Button selectStartNodeBtn = new Button("Select Start Node");
         Button selectEndNodeBtn = new Button("Select End Node");
         Button calculatePathBtn = new Button("Calculate Path");
+
+        // Nouveaux boutons pour l'export/import texte
+        Button exportGraphBtn = new Button("Export Graph");
+        Button importGraphBtn = new Button("Import Graph");
 
         colorPicker = new ColorPicker(Color.LIGHTBLUE);
 
@@ -139,8 +162,9 @@ public class DrawingApp extends Application implements Observer {
 
         VBox controlPane = new VBox(10,
                 new HBox(10, addCircleBtn, addRectBtn, addTriangleBtn),
-                new HBox(10, saveLogBtn, connectBtn, toggleDistanceBtn, showDistancesBtn),
+                new HBox(10, saveLogBtn, toggleDistanceBtn, showDistancesBtn),
                 new HBox(10, saveToDbBtn, loadFromDbBtn, new Label("Color:"), colorPicker),
+                new HBox(10, exportGraphBtn, importGraphBtn), // Ajout des nouveaux boutons
                 logStrategyControls,
                 sizeControls,
                 new HBox(10, selectStartNodeBtn, selectEndNodeBtn, calculatePathBtn),
@@ -152,32 +176,20 @@ public class DrawingApp extends Application implements Observer {
 
         // Add triangle
         addTriangleBtn.setOnAction(e -> {
-            Shape triangle = VertexFactory.createVertex("triangle", 400, 400, 80);
-            triangle.addObserver(this); // Ajouter DrawingApp comme observateur
-            shapes.add(triangle);
-            log("Added triangle");
-            redraw(gc);
-            rebuildGraph(); // Reconstruire le graphe après ajout
+            currentTool = ToolType.TRIANGLE;
+            log("Triangle tool selected. Click on canvas to add.");
         });
 
         // Add circle
         addCircleBtn.setOnAction(e -> {
-            Shape circle = VertexFactory.createVertex("circle", 200, 200, 40);
-            circle.addObserver(this); // Ajouter DrawingApp comme observateur
-            shapes.add(circle);
-            log("Added circle");
-            redraw(gc);
-            rebuildGraph(); // Reconstruire le graphe après ajout
+            currentTool = ToolType.CIRCLE;
+            log("Circle tool selected. Click on canvas to add.");
         });
 
         // Add rectangle
         addRectBtn.setOnAction(e -> {
-            Shape rect = VertexFactory.createVertex("square", 300, 300, 80);
-            rect.addObserver(this); // Ajouter DrawingApp comme observateur
-            shapes.add(rect);
-            log("Added rectangle");
-            redraw(gc);
-            rebuildGraph(); // Reconstruire le graphe après ajout
+            currentTool = ToolType.SQUARE;
+            log("Rectangle tool selected. Click on canvas to add.");
         });
 
         // Save log (this will now use the currently selected log strategy)
@@ -208,16 +220,6 @@ public class DrawingApp extends Application implements Observer {
             }
         });
 
-        // Gestion du bouton de connexion
-        connectBtn.setOnAction(e -> {
-            isConnecting = !isConnecting;
-            connectBtn.setText(isConnecting ? "Cancel Connection" : "Connect Shapes");
-            if (!isConnecting) {
-                firstShape = null;
-            }
-            log(isConnecting ? "Connection mode activated" : "Connection mode deactivated");
-        });
-
         // Gestion du bouton de basculement des distances
         toggleDistanceBtn.setOnAction(e -> {
             for (Shape shape : shapes) {
@@ -234,65 +236,108 @@ public class DrawingApp extends Application implements Observer {
             calculateAndShowAllDistances();
         });
 
+        // Export Graph to Text
+        exportGraphBtn.setOnAction(e -> exportGraphToText());
+
+        // Import Graph from Text
+        importGraphBtn.setOnAction(e -> importGraphFromText());
+
         // Modifier le gestionnaire d'événements MOUSE_PRESSED
         canvas.addEventHandler(MouseEvent.MOUSE_PRESSED, e -> {
-            if (isConnecting) {
-                // Mode connexion
-                for (Shape shape : shapes) {
-                    if (shape.contains(e.getX(), e.getY())) {
-                        if (firstShape == null) {
-                            firstShape = shape;
-                            log("First shape selected for connection");
-                        } else if (firstShape != shape) {
-                            // Créer une ligne entre les deux formes
-                            double[] tempPoints = getConnectingPoints(firstShape, shape);
-                            Line line = new Line(firstShape, shape,  // Passer les formes ici
-                                              tempPoints[0], tempPoints[1],
-                                              tempPoints[2], tempPoints[3]);
-                            shapes.add(line);
-                            log("Connected shapes with a line");
-                            redraw(gc);
-                            rebuildGraph(); // Reconstruire le graphe après connexion
-                            firstShape = null;
-                            isConnecting = false;
-                            connectBtn.setText("Connect Shapes");
-                        }
-                        return;
-                    }
+            double clickX = e.getX();
+            double clickY = e.getY();
+
+            // 1. Gérer la création de formes si un outil est sélectionné
+            if (currentTool == ToolType.CIRCLE || currentTool == ToolType.SQUARE || currentTool == ToolType.TRIANGLE) {
+                Shape newShape = null;
+                switch (currentTool) {
+                    case CIRCLE:
+                        newShape = VertexFactory.createVertex("circle", clickX, clickY, 40); // Rayon par défaut
+                        break;
+                    case SQUARE:
+                        newShape = VertexFactory.createVertex("square", clickX, clickY, 80); // Taille par défaut
+                        break;
+                    case TRIANGLE:
+                        newShape = VertexFactory.createVertex("triangle", clickX, clickY, 80); // Taille par défaut
+                        break;
+                    default:
+                        break;
                 }
-            } else if (shortestPathStartNode == null) {
-                // Mode sélection du nœud de départ pour le plus court chemin
-                Shape clickedShape = findShapeAt(e.getX(), e.getY());
+                if (newShape != null) {
+                    newShape.addObserver(this);
+                    shapes.add(newShape);
+                    log("Added " + currentTool.name().toLowerCase() + ": (" + String.format("%.1f, %.1f", clickX, clickY) + ")");
+                    redraw(gc);
+                    rebuildGraph();
+                    currentTool = ToolType.NONE; // Réinitialiser l'outil après la création
+                    return; // Consommer l'événement et sortir de la fonction
+                }
+            }
+
+            // 2. Gérer la sélection et la connexion des formes (si aucun outil de création n'est actif)
+            Shape clickedShape = findShapeAt(clickX, clickY);
+
+            // Gérer la sélection des nœuds pour le plus court chemin avant la connexion générale
+            if (shortestPathStartNode == null) {
                 if (clickedShape != null && !(clickedShape instanceof Line)) {
                     shortestPathStartNode = clickedShape;
                     log("Nœud de départ sélectionné pour le plus court chemin: " + clickedShape.getClass().getSimpleName() + " (ID: " + clickedShape.getId() + ")");
-                    // Désélectionner toutes les autres formes pour la clarté
-                    shapes.forEach(s -> s.setSelected(false));
+                    shapes.forEach(s -> s.setSelected(false)); // Désélectionner toutes les autres formes pour la clarté
                     shortestPathStartNode.setSelected(true);
                     redraw(gc);
+                    return; // Consommer l'événement
                 }
             } else if (shortestPathEndNode == null) {
-                // Mode sélection du nœud d'arrivée pour le plus court chemin
-                Shape clickedShape = findShapeAt(e.getX(), e.getY());
                 if (clickedShape != null && !(clickedShape instanceof Line) && !clickedShape.equals(shortestPathStartNode)) {
                     shortestPathEndNode = clickedShape;
-                    log("Nœud d\'arrivée sélectionné pour le plus court chemin: " + clickedShape.getClass().getSimpleName() + " (ID: " + clickedShape.getId() + ")");
+                    log("Nœud d'arrivée sélectionné pour le plus court chemin: " + clickedShape.getClass().getSimpleName() + " (ID: " + clickedShape.getId() + ")");
                     shortestPathEndNode.setSelected(true);
                     redraw(gc);
+                    return; // Consommer l'événement
                 }
-            } else {
-                // Mode normal de sélection (si aucun mode spécial n'est actif)
+            }
+            
+            // Logique de connexion des formes (si non en mode sélection de nœud de chemin)
+            if (clickedShape != null && !(clickedShape instanceof Line)) { // Assurez-vous que ce n'est pas une ligne
+                if (firstShape == null) {
+                    // Première forme sélectionnée pour la connexion
+                    firstShape = clickedShape;
+                    shapes.forEach(s -> s.setSelected(false)); // Désélectionner toutes les autres formes
+                    firstShape.setSelected(true);
+                    selectedShape = clickedShape; // Mettre à jour selectedShape pour la manipulation
+                    startX = clickX;
+                    startY = clickY;
+                    log("First shape selected for connection: " + clickedShape.getClass().getSimpleName() + " (ID: " + clickedShape.getId() + ")");
+                } else if (firstShape != clickedShape) {
+                    // Deuxième forme sélectionnée, créer une ligne
+                    double[] tempPoints = getConnectingPoints(firstShape, clickedShape);
+                    Line line = new Line(firstShape, clickedShape,
+                                      tempPoints[0], tempPoints[1],
+                                      tempPoints[2], tempPoints[3]);
+                    shapes.add(line);
+                    log("Connected " + firstShape.getClass().getSimpleName() + " (ID: " + firstShape.getId() +
+                        ") to " + clickedShape.getClass().getSimpleName() + " (ID: " + clickedShape.getId() + ")");
+                    redraw(gc);
+                    rebuildGraph();
+                    firstShape.setSelected(false); // Désélectionner la première forme
+                    firstShape = null; // Réinitialiser pour la prochaine connexion
+                    selectedShape = null; // Réinitialiser selectedShape
+                    shapes.forEach(s -> s.setSelected(false)); // Désélectionner toutes les formes
+                    log("Connection created. All shapes deselected.");
+                } else { // Clic sur la même forme deux fois : désélectionner
+                    shapes.forEach(s -> s.setSelected(false));
+                    selectedShape = null;
+                    firstShape = null;
+                    log("Shape deselected.");
+                }
+                updateSizeFields();
+                redraw(gc);
+            } else if (clickedShape == null) {
+                // Clic dans le vide, désélectionner tout et réinitialiser firstShape
+                shapes.forEach(s -> s.setSelected(false));
                 selectedShape = null;
-                shapes.forEach(s -> s.setSelected(false)); // Désélectionner toutes les formes
-                for (Shape shape : shapes) {
-                    if (shape.contains(e.getX(), e.getY())) {
-                        selectedShape = shape;
-                        shape.setSelected(true);
-                        startX = e.getX();
-                        startY = e.getY();
-                        break; // Arrêter après avoir trouvé la première forme
-                    }
-                }
+                firstShape = null;
+                log("Canvas clicked. All shapes deselected.");
                 updateSizeFields();
                 redraw(gc);
             }
@@ -346,14 +391,16 @@ public class DrawingApp extends Application implements Observer {
             }
         });
 
-        // Gestion des boutons pour le plus court chemin
+        // Mettre à jour les gestionnaires de boutons Select Start/End Node et Calculate Path
         selectStartNodeBtn.setOnAction(e -> {
+            currentTool = ToolType.NONE; // Pour ne pas créer de forme par inadvertance ou rester dans un mode spécifique
             shortestPathStartNode = null; // Réinitialiser pour une nouvelle sélection
             shortestPathEndNode = null;
             currentShortestPath.clear();
             currentShortestDistance = Double.POSITIVE_INFINITY;
+            shapes.forEach(s -> s.setHighlight(false)); // Enlève le highlight du chemin précédent
             shapes.forEach(s -> s.setSelected(false)); // Désélectionner tout
-            log("Mode sélection du nœud de départ activé.");
+            log("Mode sélection du nœud de départ activé. Veuillez cliquer sur une forme.");
             redraw(gc);
         });
 
@@ -362,19 +409,19 @@ public class DrawingApp extends Application implements Observer {
                 log("Veuillez d'abord sélectionner le nœud de départ.");
                 return;
             }
+            currentTool = ToolType.NONE; // Pour ne pas créer de forme par inadvertance ou rester dans un mode spécifique
             shortestPathEndNode = null; // Réinitialiser pour une nouvelle sélection
             currentShortestPath.clear();
             currentShortestDistance = Double.POSITIVE_INFINITY;
-            shapes.forEach(s -> {
-                if (!s.equals(shortestPathStartNode)) s.setSelected(false);
-            }); // Désélectionner tout sauf le nœud de départ
-            log("Mode sélection du nœud d\'arrivée activé.");
+            shapes.forEach(s -> { s.setHighlight(false); if (!s.equals(shortestPathStartNode)) s.setSelected(false); }); // Désélectionner tout sauf le nœud de départ et enlève le highlight
+            log("Mode sélection du nœud d'arrivée activé. Veuillez cliquer sur une forme.");
             redraw(gc);
         });
 
         calculatePathBtn.setOnAction(e -> {
+            currentTool = ToolType.NONE; // Après le calcul, ne pas rester en mode sélection de nœud
             if (shortestPathStartNode == null || shortestPathEndNode == null) {
-                log("Veuillez sélectionner à la fois un nœud de départ et un nœud d\'arrivée.");
+                log("Veuillez sélectionner à la fois un nœud de départ et un nœud d'arrivée.");
                 return;
             }
             log("Calcul du plus court chemin...");
@@ -383,7 +430,7 @@ public class DrawingApp extends Application implements Observer {
             if (!result.path.isEmpty()) {
                 currentShortestPath = result.path;
                 currentShortestDistance = result.distance;
-                log(String.format("Plus court chemin trouvé: %s (Distance: %.1f)", 
+                log(String.format("Plus court chemin trouvé: %s (Distance: %.1f)",
                                   pathToString(result.path), result.distance));
 
                 // Mettre en évidence les formes et les lignes du chemin
@@ -396,8 +443,9 @@ public class DrawingApp extends Application implements Observer {
                     // Trouver la ligne qui connecte node1 et node2
                     for (Shape s : shapes) {
                         if (s instanceof Line line) {
-                            if ((line.getStartShape().equals(node1) && line.getEndShape().equals(node2)) ||
-                                (line.getStartShape().equals(node2) && line.getEndShape().equals(node1))) {
+                            if ((line.getStartShape() != null && line.getEndShape() != null) && // Ajouter des vérifications nulles
+                                ((line.getStartShape().equals(node1) && line.getEndShape().equals(node2)) ||
+                                (line.getStartShape().equals(node2) && line.getEndShape().equals(node1)))) {
                                 line.setHighlight(true); // Mettre en évidence la ligne
                                 break;
                             }
@@ -467,13 +515,11 @@ public class DrawingApp extends Application implements Observer {
         for (Shape shape : shapes) {
             shape.draw(gc);
         }
-        // Dessiner une ligne temporaire si on est en mode connexion et qu'une première forme est sélectionnée
-        if (isConnecting && firstShape != null) {
+        // Dessiner une ligne temporaire si une première forme est sélectionnée (firstShape != null)
+        if (firstShape != null && currentTool == ToolType.NONE) { // Seulement si pas en mode création de forme
             gc.setStroke(Color.GRAY);
             gc.setLineDashes(5);
 
-            // Calculer le point de connexion temporaire pour la ligne de prévisualisation
-            // Utiliser une forme temporaire compatible avec le nouveau système de fabrique
             Shape tempShape = VertexFactory.createVertex("circle", canvas.getGraphicsContext2D().getCanvas().getWidth() / 2, canvas.getGraphicsContext2D().getCanvas().getHeight() / 2, 0);
             double[] tempPoints = getConnectingPoints(firstShape, tempShape);
             gc.strokeLine(tempPoints[0], tempPoints[1],
@@ -562,6 +608,9 @@ public class DrawingApp extends Application implements Observer {
                 Shape startShape = findShapeAt(line.getX(), line.getY());
                 Shape endShape = findShapeAt(line.getEndX(), line.getEndY());
 
+                log("Checking start point for line: (" + line.getX() + ", " + line.getY() + ")");
+                log("Checking end point for line: (" + line.getEndX() + ", " + line.getEndY() + ")");
+
                 if (startShape != null && endShape != null) {
                     String startType = startShape.getClass().getSimpleName();
                     String endType = endShape.getClass().getSimpleName();
@@ -612,6 +661,7 @@ public class DrawingApp extends Application implements Observer {
 
     private Shape findShapeAt(double x, double y) {
         double tolerance = 20.0; // Augmentation de la tolérance pour une meilleure détection
+        log("findShapeAt called for point: (" + x + ", " + y + ")");
         for (Shape shape : shapes) {
             // On ignore les lignes elles-mêmes quand on cherche une forme connectée
             if (!(shape instanceof Line)) {
@@ -624,19 +674,22 @@ public class DrawingApp extends Application implements Observer {
                         bounds.getWidth() + 2 * tolerance,
                         bounds.getHeight() + 2 * tolerance
                     );
-                    
+                    log("  Checking shape: " + shape.getClass().getSimpleName() + " (ID: " + shape.getId() + ")");
+                    log("    Shape bounds: MinX=" + bounds.getMinX() + ", MinY=" + bounds.getMinY() + ", Width=" + bounds.getWidth() + ", Height=" + bounds.getHeight());
+                    log("    Tolerant bounds: MinX=" + tolerantBounds.getMinX() + ", MinY=" + tolerantBounds.getMinY() + ", Width=" + tolerantBounds.getWidth() + ", Height=" + tolerantBounds.getHeight());
+
                     // D'abord, une vérification rapide avec la boîte englobante tolérante
                     if (tolerantBounds.contains(x, y)) {
+                        log("    Point (" + x + ", " + y + ") IS within tolerant bounds.");
                         // Si dans la boîte englobante, effectuer une vérification précise avec la méthode contains() de la forme
                         if (shape.contains(x, y)) {
-                            log("Forme trouvée: " + shape.getClass().getSimpleName() + 
-                                " aux coordonnées (" + x + ", " + y + ")");
+                            log("    Point (" + x + ", " + y + ") IS within shape.contains(). Forme trouvée.");
                             return shape;
                         } else {
-                            log("Point dans la boîte englobante mais pas dans la forme: " + 
-                                shape.getClass().getSimpleName() + 
-                                " aux coordonnées (" + x + ", " + y + ")");
+                            log("    Point (" + x + ", " + y + ") IS within tolerant bounds, but NOT within shape.contains().");
                         }
+                    } else {
+                        log("    Point (" + x + ", " + y + ") IS NOT within tolerant bounds.");
                     }
                 }
             }
@@ -730,6 +783,144 @@ public class DrawingApp extends Application implements Observer {
     public void update() {
         // Cette méthode est appelée quand une forme change d'état
         redraw(canvas.getGraphicsContext2D());
+    }
+
+    private void exportGraphToText() {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Save Graph Data");
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
+        fileChooser.setInitialFileName("graph_data.txt");
+
+        File file = fileChooser.showSaveDialog(canvas.getScene().getWindow());
+
+        if (file != null) {
+            log("Exporting graph data to " + file.getAbsolutePath() + "...");
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
+                for (Shape shape : shapes) {
+                    if (shape instanceof CircleVertex) {
+                        CircleVertex c = (CircleVertex) shape;
+                        writer.write(String.format("CIRCLE, %d, %.1f, %.1f, %.1f, %s, %s, %.1f\n",
+                                                   c.getId(), c.getX(), c.getY(), c.getRadius(),
+                                                   c.getFillColor().toString(), c.getStrokeColor().toString(), c.getStrokeWidth()));
+                    } else if (shape instanceof SquareVertex) {
+                        SquareVertex s = (SquareVertex) shape;
+                        writer.write(String.format("SQUARE, %d, %.1f, %.1f, %.1f, %.1f, %s, %s, %.1f\n",
+                                                   s.getId(), s.getX(), s.getY(), s.getWidth(), s.getHeight(),
+                                                   s.getFillColor().toString(), s.getStrokeColor().toString(), s.getStrokeWidth()));
+                    } else if (shape instanceof TriangleVertex) {
+                        TriangleVertex t = (TriangleVertex) shape;
+                        writer.write(String.format("TRIANGLE, %d, %.1f, %.1f, %.1f, %s, %s, %.1f\n",
+                                                   t.getId(), t.getX(), t.getY(), t.getSize(),
+                                                   t.getFillColor().toString(), t.getStrokeColor().toString(), t.getStrokeWidth()));
+                    } else if (shape instanceof Line) {
+                        Line l = (Line) shape;
+                        // Sauvegarder les IDs des formes connectées pour la reconstruction
+                        int startShapeId = (l.getStartShape() != null) ? l.getStartShape().getId() : -1; // -1 si non connecté
+                        int endShapeId = (l.getEndShape() != null) ? l.getEndShape().getId() : -1;
+                        writer.write(String.format("LINE, %d, %d, %d, %.1f, %.1f, %.1f, %.1f, %s, %s, %.1f\n",
+                                                   l.getId(), startShapeId, endShapeId, l.getX(), l.getY(), l.getEndX(), l.getEndY(),
+                                                   l.getFillColor().toString(), l.getStrokeColor().toString(), l.getStrokeWidth()));
+                    }
+                }
+                log("Graph data exported successfully.");
+            } catch (IOException e) {
+                log("Error exporting graph data: " + e.getMessage());
+                System.err.println("Error exporting graph data: " + e.getMessage());
+            }
+        } else {
+            log("File export cancelled.");
+        }
+    }
+
+    private void importGraphFromText() {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Select Graph Data File");
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
+
+        File file = fileChooser.showOpenDialog(canvas.getScene().getWindow());
+
+        if (file != null) {
+            log("Importing graph data from " + file.getAbsolutePath() + "...");
+            shapes.clear(); // Clear current shapes
+            Shape.resetNextId(); // Reset ID counter
+            List<LineDataForReconnect> linesToReconnectData = new ArrayList<>(); // Nouvelle liste
+            Map<Integer, Shape> loadedShapesMap = new HashMap<>(); // Nouveau: pour stocker les formes par ID
+
+            try (BufferedReader reader = new BufferedReader(new FileReader(file))) { // Utilisation du fichier sélectionné
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    String[] parts = line.split(", ");
+                    String type = parts[0];
+                    int id = Integer.parseInt(parts[1]);
+                    double x = Double.parseDouble(parts[2]);
+                    double y = Double.parseDouble(parts[3]);
+
+                    Shape newShape = null;
+                    if (type.equals("CIRCLE")) {
+                        double radius = Double.parseDouble(parts[4]);
+                        newShape = new CircleVertex(x, y, radius);
+                    } else if (type.equals("SQUARE")) {
+                        double width = Double.parseDouble(parts[4]);
+                        double height = Double.parseDouble(parts[5]);
+                        newShape = new SquareVertex(x, y, width, height);
+                    } else if (type.equals("TRIANGLE")) {
+                        double size = Double.parseDouble(parts[4]);
+                        newShape = new TriangleVertex(x, y, size);
+                    } else if (type.equals("LINE")) {
+                        int startShapeId = Integer.parseInt(parts[2]);
+                        int endShapeId = Integer.parseInt(parts[3]);
+                        double startX = Double.parseDouble(parts[4]);
+                        double startY = Double.parseDouble(parts[5]);
+                        double endX = Double.parseDouble(parts[6]);
+                        double endY = Double.parseDouble(parts[7]);
+                        
+                        Line newLine = new Line(startX, startY, endX, endY);
+                        newLine.setId(id);
+                        linesToReconnectData.add(new LineDataForReconnect(newLine, startShapeId, endShapeId));
+                        newShape = newLine;
+                    }
+
+                    if (newShape != null) {
+                        newShape.setId(id);
+                        if (!type.equals("LINE")) {
+                             newShape.setFillColor(javafx.scene.paint.Color.valueOf(parts[parts.length - 3]));
+                             newShape.setStrokeColor(javafx.scene.paint.Color.valueOf(parts[parts.length - 2]));
+                             newShape.setStrokeWidth(Double.parseDouble(parts[parts.length - 1]));
+                        } else {
+                             newShape.setFillColor(javafx.scene.paint.Color.valueOf(parts[8]));
+                             newShape.setStrokeColor(javafx.scene.paint.Color.valueOf(parts[9]));
+                             newShape.setStrokeWidth(Double.parseDouble(parts[10]));
+                        }
+                        newShape.addObserver(this);
+                        shapes.add(newShape);
+                        loadedShapesMap.put(id, newShape);
+                    }
+                }
+
+                for (LineDataForReconnect lineData : linesToReconnectData) {
+                    Shape startShape = loadedShapesMap.get(lineData.startShapeId); 
+                    Shape endShape = loadedShapesMap.get(lineData.endShapeId);   
+
+                    lineData.line.setStartShape(startShape);
+                    lineData.line.setEndShape(endShape);
+
+                    if (startShape != null && endShape != null) {
+                        double[] updatedPoints = getConnectingPoints(startShape, endShape);
+                        lineData.line.setStartPoint(updatedPoints[0], updatedPoints[1]);
+                        lineData.line.setEndPoint(updatedPoints[2], updatedPoints[3]);
+                    }
+                }
+
+                log("Graph data imported successfully.");
+                redraw(canvas.getGraphicsContext2D());
+                rebuildGraph();
+            } catch (IOException | NumberFormatException e) {
+                log("Error importing graph data: " + e.getMessage());
+                System.err.println("Error importing graph data: " + e.getMessage());
+            }
+        } else {
+            log("File import cancelled.");
+        }
     }
 
     public static void main(String[] args) {

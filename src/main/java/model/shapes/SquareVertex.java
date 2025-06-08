@@ -49,8 +49,8 @@ public class SquareVertex extends Shape{
     
     @Override
     public boolean contains(double pointX, double pointY) {
-        return pointX >= x && pointX <= x + width && 
-               pointY >= y && pointY <= y + height;
+        return pointX >= x - 5.0 && pointX <= x + width + 5.0 && 
+               pointY >= y - 5.0 && pointY <= y + height + 5.0;
     }
     
     @Override

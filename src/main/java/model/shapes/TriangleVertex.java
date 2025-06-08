@@ -45,8 +45,8 @@ public class TriangleVertex extends Shape {
     @Override
     public boolean contains(double mx, double my) {
         // Simple bounding box check for click detection
-        return mx >= x - size / 2 && mx <= x + size / 2 &&
-               my >= y - size / 2 && my <= y + size / 2;
+        return mx >= x - size / 2 - 5.0 && mx <= x + size / 2 + 5.0 &&
+               my >= y - size / 2 - 5.0 && my <= y + size / 2 + 5.0;
     }
 
     @Override

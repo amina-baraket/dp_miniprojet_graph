@@ -782,3 +782,374 @@ Moved shape to (67.19999999999993, 349.59999999999997)
 Log area content saved to file.
 
 [2025-06-08 18:12:10] Log strategy changed to File.
+[2025-06-08 20:22:55] Added circle
+Graphe reconstruit avec 1 nœuds.
+Added circle
+Graphe reconstruit avec 2 nœuds.
+Added circle
+Graphe reconstruit avec 3 nœuds.
+Added circle
+Graphe reconstruit avec 4 nœuds.
+findShapeAt called for point: (180.79999999999995, 184.0)
+  Checking shape: CircleVertex (ID: 1)
+    Shape bounds: MinX=160.0, MinY=160.0, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=140.0, MinY=140.0, Width=120.0, Height=120.0
+    Point (180.79999999999995, 184.0) IS within tolerant bounds.
+    Point (180.79999999999995, 184.0) IS within shape.contains(). Forme trouvée.
+Nœud de départ sélectionné pour le plus court chemin: CircleVertex (ID: 1)
+Added rectangle
+Graphe reconstruit avec 5 nœuds.
+findShapeAt called for point: (331.20000000000005, 340.8)
+  Checking shape: CircleVertex (ID: 1)
+    Shape bounds: MinX=160.0, MinY=160.0, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=140.0, MinY=140.0, Width=120.0, Height=120.0
+    Point (331.20000000000005, 340.8) IS NOT within tolerant bounds.
+  Checking shape: CircleVertex (ID: 2)
+    Shape bounds: MinX=160.0, MinY=160.0, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=140.0, MinY=140.0, Width=120.0, Height=120.0
+    Point (331.20000000000005, 340.8) IS NOT within tolerant bounds.
+  Checking shape: CircleVertex (ID: 3)
+    Shape bounds: MinX=160.0, MinY=160.0, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=140.0, MinY=140.0, Width=120.0, Height=120.0
+    Point (331.20000000000005, 340.8) IS NOT within tolerant bounds.
+  Checking shape: CircleVertex (ID: 4)
+    Shape bounds: MinX=160.0, MinY=160.0, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=140.0, MinY=140.0, Width=120.0, Height=120.0
+    Point (331.20000000000005, 340.8) IS NOT within tolerant bounds.
+  Checking shape: SquareVertex (ID: 5)
+    Shape bounds: MinX=300.0, MinY=300.0, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=280.0, MinY=280.0, Width=120.0, Height=120.0
+    Point (331.20000000000005, 340.8) IS within tolerant bounds.
+    Point (331.20000000000005, 340.8) IS within shape.contains(). Forme trouvée.
+Nœud d'arrivée sélectionné pour le plus court chemin: SquareVertex (ID: 5)
+Moved shape to (384.79999999999995, 208.0)
+Moved shape to (427.20000000000005, 188.8)
+Moved shape to (52.00000000000006, 392.8)
+Moved shape to (128.0, 180.79999999999998)
+Moved shape to (200.0, 200.0)
+Moved shape to (256.79999999999995, 95.99999999999997)
+Connection mode activated
+First shape selected for connection
+Moved shape to (256.79999999999995, 95.99999999999997)
+Connected shapes with a line
+Graphe reconstruit avec 5 nœuds.
+Moved shape to (256.79999999999995, 95.99999999999997)
+Connection mode activated
+First shape selected for connection
+Moved shape to (256.79999999999995, 95.99999999999997)
+Connected shapes with a line
+Graphe reconstruit avec 5 nœuds.
+Moved shape to (256.79999999999995, 95.99999999999997)
+Connection mode activated
+First shape selected for connection
+Moved shape to (256.79999999999995, 95.99999999999997)
+Connected shapes with a line
+Graphe reconstruit avec 5 nœuds.
+Moved shape to (256.79999999999995, 95.99999999999997)
+Connection mode activated
+First shape selected for connection
+Moved shape to (256.79999999999995, 95.99999999999997)
+Connected shapes with a line
+Graphe reconstruit avec 5 nœuds.
+Moved shape to (256.79999999999995, 95.99999999999997)
+Connection mode activated
+First shape selected for connection
+Moved shape to (256.79999999999995, 95.99999999999997)
+Connected shapes with a line
+Graphe reconstruit avec 5 nœuds.
+Moved shape to (256.79999999999995, 95.99999999999997)
+Connection mode activated
+First shape selected for connection
+Moved shape to (256.79999999999995, 95.99999999999997)
+Connected shapes with a line
+Graphe reconstruit avec 5 nœuds.
+Moved shape to (256.79999999999995, 95.99999999999997)
+Connection mode activated
+First shape selected for connection
+Moved shape to (256.79999999999995, 95.99999999999997)
+Connected shapes with a line
+Graphe reconstruit avec 5 nœuds.
+Moved shape to (256.79999999999995, 95.99999999999997)
+Connection mode activated
+First shape selected for connection
+Moved shape to (256.79999999999995, 95.99999999999997)
+Connected shapes with a line
+Graphe reconstruit avec 5 nœuds.
+Moved shape to (256.79999999999995, 95.99999999999997)
+
+=== Distances entre les formes connectées ===
+findShapeAt called for point: (161.40915921051982, 158.8039076005273)
+  Checking shape: CircleVertex (ID: 1)
+    Shape bounds: MinX=387.20000000000005, MinY=148.8, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=367.20000000000005, MinY=128.8, Width=120.0, Height=120.0
+    Point (161.40915921051982, 158.8039076005273) IS NOT within tolerant bounds.
+  Checking shape: CircleVertex (ID: 2)
+    Shape bounds: MinX=12.000000000000057, MinY=352.8, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=-7.999999999999943, MinY=332.8, Width=120.0, Height=120.0
+    Point (161.40915921051982, 158.8039076005273) IS NOT within tolerant bounds.
+  Checking shape: CircleVertex (ID: 3)
+    Shape bounds: MinX=88.0, MinY=140.79999999999998, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=68.0, MinY=120.79999999999998, Width=120.0, Height=120.0
+    Point (161.40915921051982, 158.8039076005273) IS within tolerant bounds.
+    Point (161.40915921051982, 158.8039076005273) IS within shape.contains(). Forme trouvée.
+findShapeAt called for point: (223.39084078948014, 117.99609239947264)
+  Checking shape: CircleVertex (ID: 1)
+    Shape bounds: MinX=387.20000000000005, MinY=148.8, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=367.20000000000005, MinY=128.8, Width=120.0, Height=120.0
+    Point (223.39084078948014, 117.99609239947264) IS NOT within tolerant bounds.
+  Checking shape: CircleVertex (ID: 2)
+    Shape bounds: MinX=12.000000000000057, MinY=352.8, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=-7.999999999999943, MinY=332.8, Width=120.0, Height=120.0
+    Point (223.39084078948014, 117.99609239947264) IS NOT within tolerant bounds.
+  Checking shape: CircleVertex (ID: 3)
+    Shape bounds: MinX=88.0, MinY=140.79999999999998, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=68.0, MinY=120.79999999999998, Width=120.0, Height=120.0
+    Point (223.39084078948014, 117.99609239947264) IS NOT within tolerant bounds.
+  Checking shape: CircleVertex (ID: 4)
+    Shape bounds: MinX=216.79999999999995, MinY=55.99999999999997, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=196.79999999999995, MinY=35.99999999999997, Width=120.0, Height=120.0
+    Point (223.39084078948014, 117.99609239947264) IS within tolerant bounds.
+    Point (223.39084078948014, 117.99609239947264) IS within shape.contains(). Forme trouvée.
+Checking start point for line: (161.40915921051982, 158.8039076005273)
+Checking end point for line: (223.39084078948014, 117.99609239947264)
+Distance entre CircleVertex et CircleVertex = 74.2 pixels
+findShapeAt called for point: (114.50154816681763, 218.45357616624554)
+  Checking shape: CircleVertex (ID: 1)
+    Shape bounds: MinX=387.20000000000005, MinY=148.8, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=367.20000000000005, MinY=128.8, Width=120.0, Height=120.0
+    Point (114.50154816681763, 218.45357616624554) IS NOT within tolerant bounds.
+  Checking shape: CircleVertex (ID: 2)
+    Shape bounds: MinX=12.000000000000057, MinY=352.8, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=-7.999999999999943, MinY=332.8, Width=120.0, Height=120.0
+    Point (114.50154816681763, 218.45357616624554) IS NOT within tolerant bounds.
+  Checking shape: CircleVertex (ID: 3)
+    Shape bounds: MinX=88.0, MinY=140.79999999999998, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=68.0, MinY=120.79999999999998, Width=120.0, Height=120.0
+    Point (114.50154816681763, 218.45357616624554) IS within tolerant bounds.
+    Point (114.50154816681763, 218.45357616624554) IS within shape.contains(). Forme trouvée.
+findShapeAt called for point: (65.49845183318241, 355.14642383375445)
+  Checking shape: CircleVertex (ID: 1)
+    Shape bounds: MinX=387.20000000000005, MinY=148.8, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=367.20000000000005, MinY=128.8, Width=120.0, Height=120.0
+    Point (65.49845183318241, 355.14642383375445) IS NOT within tolerant bounds.
+  Checking shape: CircleVertex (ID: 2)
+    Shape bounds: MinX=12.000000000000057, MinY=352.8, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=-7.999999999999943, MinY=332.8, Width=120.0, Height=120.0
+    Point (65.49845183318241, 355.14642383375445) IS within tolerant bounds.
+    Point (65.49845183318241, 355.14642383375445) IS within shape.contains(). Forme trouvée.
+Checking start point for line: (114.50154816681763, 218.45357616624554)
+Checking end point for line: (65.49845183318241, 355.14642383375445)
+Distance entre CircleVertex et CircleVertex = 145.2 pixels
+findShapeAt called for point: (160.87667395779252, 203.58429962656317)
+  Checking shape: CircleVertex (ID: 1)
+    Shape bounds: MinX=387.20000000000005, MinY=148.8, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=367.20000000000005, MinY=128.8, Width=120.0, Height=120.0
+    Point (160.87667395779252, 203.58429962656317) IS NOT within tolerant bounds.
+  Checking shape: CircleVertex (ID: 2)
+    Shape bounds: MinX=12.000000000000057, MinY=352.8, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=-7.999999999999943, MinY=332.8, Width=120.0, Height=120.0
+    Point (160.87667395779252, 203.58429962656317) IS NOT within tolerant bounds.
+  Checking shape: CircleVertex (ID: 3)
+    Shape bounds: MinX=88.0, MinY=140.79999999999998, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=68.0, MinY=120.79999999999998, Width=120.0, Height=120.0
+    Point (160.87667395779252, 203.58429962656317) IS within tolerant bounds.
+    Point (160.87667395779252, 203.58429962656317) IS within shape.contains(). Forme trouvée.
+findShapeAt called for point: (300.0, 300.0)
+  Checking shape: CircleVertex (ID: 1)
+    Shape bounds: MinX=387.20000000000005, MinY=148.8, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=367.20000000000005, MinY=128.8, Width=120.0, Height=120.0
+    Point (300.0, 300.0) IS NOT within tolerant bounds.
+  Checking shape: CircleVertex (ID: 2)
+    Shape bounds: MinX=12.000000000000057, MinY=352.8, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=-7.999999999999943, MinY=332.8, Width=120.0, Height=120.0
+    Point (300.0, 300.0) IS NOT within tolerant bounds.
+  Checking shape: CircleVertex (ID: 3)
+    Shape bounds: MinX=88.0, MinY=140.79999999999998, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=68.0, MinY=120.79999999999998, Width=120.0, Height=120.0
+    Point (300.0, 300.0) IS NOT within tolerant bounds.
+  Checking shape: CircleVertex (ID: 4)
+    Shape bounds: MinX=216.79999999999995, MinY=55.99999999999997, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=196.79999999999995, MinY=35.99999999999997, Width=120.0, Height=120.0
+    Point (300.0, 300.0) IS NOT within tolerant bounds.
+  Checking shape: SquareVertex (ID: 5)
+    Shape bounds: MinX=300.0, MinY=300.0, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=280.0, MinY=280.0, Width=120.0, Height=120.0
+    Point (300.0, 300.0) IS within tolerant bounds.
+    Point (300.0, 300.0) IS within shape.contains(). Forme trouvée.
+Checking start point for line: (160.87667395779252, 203.58429962656317)
+Checking end point for line: (300.0, 300.0)
+Distance entre CircleVertex et SquareVertex = 169.3 pixels
+findShapeAt called for point: (89.46309050478591, 378.78155323046724)
+  Checking shape: CircleVertex (ID: 1)
+    Shape bounds: MinX=387.20000000000005, MinY=148.8, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=367.20000000000005, MinY=128.8, Width=120.0, Height=120.0
+    Point (89.46309050478591, 378.78155323046724) IS NOT within tolerant bounds.
+  Checking shape: CircleVertex (ID: 2)
+    Shape bounds: MinX=12.000000000000057, MinY=352.8, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=-7.999999999999943, MinY=332.8, Width=120.0, Height=120.0
+    Point (89.46309050478591, 378.78155323046724) IS within tolerant bounds.
+    Point (89.46309050478591, 378.78155323046724) IS within shape.contains(). Forme trouvée.
+findShapeAt called for point: (300.0, 300.0)
+  Checking shape: CircleVertex (ID: 1)
+    Shape bounds: MinX=387.20000000000005, MinY=148.8, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=367.20000000000005, MinY=128.8, Width=120.0, Height=120.0
+    Point (300.0, 300.0) IS NOT within tolerant bounds.
+  Checking shape: CircleVertex (ID: 2)
+    Shape bounds: MinX=12.000000000000057, MinY=352.8, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=-7.999999999999943, MinY=332.8, Width=120.0, Height=120.0
+    Point (300.0, 300.0) IS NOT within tolerant bounds.
+  Checking shape: CircleVertex (ID: 3)
+    Shape bounds: MinX=88.0, MinY=140.79999999999998, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=68.0, MinY=120.79999999999998, Width=120.0, Height=120.0
+    Point (300.0, 300.0) IS NOT within tolerant bounds.
+  Checking shape: CircleVertex (ID: 4)
+    Shape bounds: MinX=216.79999999999995, MinY=55.99999999999997, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=196.79999999999995, MinY=35.99999999999997, Width=120.0, Height=120.0
+    Point (300.0, 300.0) IS NOT within tolerant bounds.
+  Checking shape: SquareVertex (ID: 5)
+    Shape bounds: MinX=300.0, MinY=300.0, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=280.0, MinY=280.0, Width=120.0, Height=120.0
+    Point (300.0, 300.0) IS within tolerant bounds.
+    Point (300.0, 300.0) IS within shape.contains(). Forme trouvée.
+Checking start point for line: (89.46309050478591, 378.78155323046724)
+Checking end point for line: (300.0, 300.0)
+Distance entre CircleVertex et SquareVertex = 224.8 pixels
+findShapeAt called for point: (291.92842082774644, 115.13097096722342)
+  Checking shape: CircleVertex (ID: 1)
+    Shape bounds: MinX=387.20000000000005, MinY=148.8, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=367.20000000000005, MinY=128.8, Width=120.0, Height=120.0
+    Point (291.92842082774644, 115.13097096722342) IS NOT within tolerant bounds.
+  Checking shape: CircleVertex (ID: 2)
+    Shape bounds: MinX=12.000000000000057, MinY=352.8, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=-7.999999999999943, MinY=332.8, Width=120.0, Height=120.0
+    Point (291.92842082774644, 115.13097096722342) IS NOT within tolerant bounds.
+  Checking shape: CircleVertex (ID: 3)
+    Shape bounds: MinX=88.0, MinY=140.79999999999998, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=68.0, MinY=120.79999999999998, Width=120.0, Height=120.0
+    Point (291.92842082774644, 115.13097096722342) IS NOT within tolerant bounds.
+  Checking shape: CircleVertex (ID: 4)
+    Shape bounds: MinX=216.79999999999995, MinY=55.99999999999997, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=196.79999999999995, MinY=35.99999999999997, Width=120.0, Height=120.0
+    Point (291.92842082774644, 115.13097096722342) IS within tolerant bounds.
+    Point (291.92842082774644, 115.13097096722342) IS within shape.contains(). Forme trouvée.
+findShapeAt called for point: (392.07157917225356, 169.66902903277656)
+  Checking shape: CircleVertex (ID: 1)
+    Shape bounds: MinX=387.20000000000005, MinY=148.8, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=367.20000000000005, MinY=128.8, Width=120.0, Height=120.0
+    Point (392.07157917225356, 169.66902903277656) IS within tolerant bounds.
+    Point (392.07157917225356, 169.66902903277656) IS within shape.contains(). Forme trouvée.
+Checking start point for line: (291.92842082774644, 115.13097096722342)
+Checking end point for line: (392.07157917225356, 169.66902903277656)
+Distance entre CircleVertex et CircleVertex = 114.0 pixels
+findShapeAt called for point: (397.08520237776804, 215.1267727640896)
+  Checking shape: CircleVertex (ID: 1)
+    Shape bounds: MinX=387.20000000000005, MinY=148.8, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=367.20000000000005, MinY=128.8, Width=120.0, Height=120.0
+    Point (397.08520237776804, 215.1267727640896) IS within tolerant bounds.
+    Point (397.08520237776804, 215.1267727640896) IS within shape.contains(). Forme trouvée.
+findShapeAt called for point: (300.0, 300.0)
+  Checking shape: CircleVertex (ID: 1)
+    Shape bounds: MinX=387.20000000000005, MinY=148.8, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=367.20000000000005, MinY=128.8, Width=120.0, Height=120.0
+    Point (300.0, 300.0) IS NOT within tolerant bounds.
+  Checking shape: CircleVertex (ID: 2)
+    Shape bounds: MinX=12.000000000000057, MinY=352.8, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=-7.999999999999943, MinY=332.8, Width=120.0, Height=120.0
+    Point (300.0, 300.0) IS NOT within tolerant bounds.
+  Checking shape: CircleVertex (ID: 3)
+    Shape bounds: MinX=88.0, MinY=140.79999999999998, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=68.0, MinY=120.79999999999998, Width=120.0, Height=120.0
+    Point (300.0, 300.0) IS NOT within tolerant bounds.
+  Checking shape: CircleVertex (ID: 4)
+    Shape bounds: MinX=216.79999999999995, MinY=55.99999999999997, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=196.79999999999995, MinY=35.99999999999997, Width=120.0, Height=120.0
+    Point (300.0, 300.0) IS NOT within tolerant bounds.
+  Checking shape: SquareVertex (ID: 5)
+    Shape bounds: MinX=300.0, MinY=300.0, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=280.0, MinY=280.0, Width=120.0, Height=120.0
+    Point (300.0, 300.0) IS within tolerant bounds.
+    Point (300.0, 300.0) IS within shape.contains(). Forme trouvée.
+Checking start point for line: (397.08520237776804, 215.1267727640896)
+Checking end point for line: (300.0, 300.0)
+Distance entre CircleVertex et SquareVertex = 129.0 pixels
+findShapeAt called for point: (387.2142907164925, 187.7308633881415)
+  Checking shape: CircleVertex (ID: 1)
+    Shape bounds: MinX=387.20000000000005, MinY=148.8, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=367.20000000000005, MinY=128.8, Width=120.0, Height=120.0
+    Point (387.2142907164925, 187.7308633881415) IS within tolerant bounds.
+    Point (387.2142907164925, 187.7308633881415) IS within shape.contains(). Forme trouvée.
+findShapeAt called for point: (167.98570928350756, 181.86913661185847)
+  Checking shape: CircleVertex (ID: 1)
+    Shape bounds: MinX=387.20000000000005, MinY=148.8, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=367.20000000000005, MinY=128.8, Width=120.0, Height=120.0
+    Point (167.98570928350756, 181.86913661185847) IS NOT within tolerant bounds.
+  Checking shape: CircleVertex (ID: 2)
+    Shape bounds: MinX=12.000000000000057, MinY=352.8, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=-7.999999999999943, MinY=332.8, Width=120.0, Height=120.0
+    Point (167.98570928350756, 181.86913661185847) IS NOT within tolerant bounds.
+  Checking shape: CircleVertex (ID: 3)
+    Shape bounds: MinX=88.0, MinY=140.79999999999998, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=68.0, MinY=120.79999999999998, Width=120.0, Height=120.0
+    Point (167.98570928350756, 181.86913661185847) IS within tolerant bounds.
+    Point (167.98570928350756, 181.86913661185847) IS within shape.contains(). Forme trouvée.
+Checking start point for line: (387.2142907164925, 187.7308633881415)
+Checking end point for line: (167.98570928350756, 181.86913661185847)
+Distance entre CircleVertex et CircleVertex = 219.3 pixels
+findShapeAt called for point: (74.71761236908105, 359.8772101994959)
+  Checking shape: CircleVertex (ID: 1)
+    Shape bounds: MinX=387.20000000000005, MinY=148.8, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=367.20000000000005, MinY=128.8, Width=120.0, Height=120.0
+    Point (74.71761236908105, 359.8772101994959) IS NOT within tolerant bounds.
+  Checking shape: CircleVertex (ID: 2)
+    Shape bounds: MinX=12.000000000000057, MinY=352.8, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=-7.999999999999943, MinY=332.8, Width=120.0, Height=120.0
+    Point (74.71761236908105, 359.8772101994959) IS within tolerant bounds.
+    Point (74.71761236908105, 359.8772101994959) IS within shape.contains(). Forme trouvée.
+findShapeAt called for point: (234.08238763091896, 128.9227898005041)
+  Checking shape: CircleVertex (ID: 1)
+    Shape bounds: MinX=387.20000000000005, MinY=148.8, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=367.20000000000005, MinY=128.8, Width=120.0, Height=120.0
+    Point (234.08238763091896, 128.9227898005041) IS NOT within tolerant bounds.
+  Checking shape: CircleVertex (ID: 2)
+    Shape bounds: MinX=12.000000000000057, MinY=352.8, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=-7.999999999999943, MinY=332.8, Width=120.0, Height=120.0
+    Point (234.08238763091896, 128.9227898005041) IS NOT within tolerant bounds.
+  Checking shape: CircleVertex (ID: 3)
+    Shape bounds: MinX=88.0, MinY=140.79999999999998, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=68.0, MinY=120.79999999999998, Width=120.0, Height=120.0
+    Point (234.08238763091896, 128.9227898005041) IS NOT within tolerant bounds.
+  Checking shape: CircleVertex (ID: 4)
+    Shape bounds: MinX=216.79999999999995, MinY=55.99999999999997, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=196.79999999999995, MinY=35.99999999999997, Width=120.0, Height=120.0
+    Point (234.08238763091896, 128.9227898005041) IS within tolerant bounds.
+    Point (234.08238763091896, 128.9227898005041) IS within shape.contains(). Forme trouvée.
+Checking start point for line: (74.71761236908105, 359.8772101994959)
+Checking end point for line: (234.08238763091896, 128.9227898005041)
+Distance entre CircleVertex et CircleVertex = 280.6 pixels
+Total: 8 connexions
+===============================
+
+Mode sélection du nœud de départ activé.
+findShapeAt called for point: (37.60000000000002, 383.2)
+  Checking shape: CircleVertex (ID: 1)
+    Shape bounds: MinX=387.20000000000005, MinY=148.8, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=367.20000000000005, MinY=128.8, Width=120.0, Height=120.0
+    Point (37.60000000000002, 383.2) IS NOT within tolerant bounds.
+  Checking shape: CircleVertex (ID: 2)
+    Shape bounds: MinX=12.000000000000057, MinY=352.8, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=-7.999999999999943, MinY=332.8, Width=120.0, Height=120.0
+    Point (37.60000000000002, 383.2) IS within tolerant bounds.
+    Point (37.60000000000002, 383.2) IS within shape.contains(). Forme trouvée.
+Nœud de départ sélectionné pour le plus court chemin: CircleVertex (ID: 2)
+Mode sélection du nœud d'arrivée activé.
+findShapeAt called for point: (436.0, 196.8)
+  Checking shape: CircleVertex (ID: 1)
+    Shape bounds: MinX=387.20000000000005, MinY=148.8, Width=80.0, Height=80.0
+    Tolerant bounds: MinX=367.20000000000005, MinY=128.8, Width=120.0, Height=120.0
+    Point (436.0, 196.8) IS within tolerant bounds.
+    Point (436.0, 196.8) IS within shape.contains(). Forme trouvée.
+Nœud d'arrivée sélectionné pour le plus court chemin: CircleVertex (ID: 1)
+Calcul du plus court chemin...
+Plus court chemin trouvé: CircleVertex(2) -> CircleVertex(3) -> CircleVertex(4) -> CircleVertex(1) (Distance: 333.5)
+Drawing saved to database.
+
