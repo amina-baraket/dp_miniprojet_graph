@@ -1,13 +1,15 @@
+package main.java.model.shapes;
+
 import javafx.geometry.BoundingBox;
 import javafx.geometry.Bounds;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
-public class Circle extends Shape{
+public class CircleVertex extends Shape{
     
     private double radius;
     
-    public Circle(double centerX, double centerY, double radius) {
+    public CircleVertex(double centerX, double centerY, double radius) {
         super(centerX, centerY);
         this.radius = radius;
     }

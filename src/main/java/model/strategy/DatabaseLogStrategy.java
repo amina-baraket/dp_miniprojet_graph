@@ -1,5 +1,8 @@
+package main.java.model.strategy;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import main.java.model.database.DatabaseManager;
 
 public class DatabaseLogStrategy implements LogStrategy {
     private DatabaseManager dbManager;

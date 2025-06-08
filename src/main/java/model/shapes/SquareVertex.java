@@ -1,13 +1,15 @@
+package main.java.model.shapes;
+
 import javafx.geometry.BoundingBox;
 import javafx.geometry.Bounds;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
-public class Rectangle extends Shape{
+public class SquareVertex extends Shape{
 
     private double width, height;
 
-    public Rectangle(double x, double y, double width, double height) {
+    public SquareVertex(double x, double y, double width, double height) {
         super(x, y);
         this.width = width;
         this.height = height;

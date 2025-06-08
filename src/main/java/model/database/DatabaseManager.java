@@ -1,3 +1,5 @@
+package main.java.model.database;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -6,6 +8,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
+import main.java.model.shapes.Shape;
+import main.java.model.shapes.CircleVertex;
+import main.java.model.shapes.SquareVertex;
+import main.java.model.shapes.TriangleVertex;
+import main.java.model.shapes.Line;
 
 public class DatabaseManager {
     private static final String DB_URL = "jdbc:sqlite:drawingapp.db";
@@ -76,19 +84,19 @@ public class DatabaseManager {
             pstmt.setDouble(7, shape.getStrokeWidth());
 
             double prop1 = 0, prop2 = 0, prop3 = 0;
-            if (shape instanceof Circle) {
-                Circle circle = (Circle) shape;
+            if (shape instanceof CircleVertex) {
+                CircleVertex circle = (CircleVertex) shape;
                 prop1 = circle.getRadius();
-            } else if (shape instanceof Rectangle) {
-                Rectangle rect = (Rectangle) shape;
+            } else if (shape instanceof SquareVertex) {
+                SquareVertex rect = (SquareVertex) shape;
                 prop1 = rect.getWidth();
                 prop2 = rect.getHeight();
             } else if (shape instanceof Line) {
                 Line line = (Line) shape;
                 prop1 = line.getEndX();
                 prop2 = line.getEndY();
-            } else if (shape instanceof Triangle) {
-                Triangle triangle = (Triangle) shape;
+            } else if (shape instanceof TriangleVertex) {
+                TriangleVertex triangle = (TriangleVertex) shape;
                 prop1 = triangle.getSize();
             }
             pstmt.setDouble(8, prop1);
@@ -122,17 +130,17 @@ public class DatabaseManager {
 
                 Shape shape = null;
                 switch (type) {
-                    case "Circle":
-                        shape = new Circle(x, y, prop1);
+                    case "CircleVertex":
+                        shape = new CircleVertex(x, y, prop1);
                         break;
-                    case "Rectangle":
-                        shape = new Rectangle(x, y, prop1, prop2);
+                    case "SquareVertex":
+                        shape = new SquareVertex(x, y, prop1, prop2);
                         break;
                     case "Line":
                         shape = new Line(x, y, prop1, prop2);
                         break;
-                    case "Triangle":
-                        shape = new Triangle(x, y, prop1);
+                    case "TriangleVertex":
+                        shape = new TriangleVertex(x, y, prop1);
                         break;
                     default:
                         System.err.println("Unknown shape type: " + type);

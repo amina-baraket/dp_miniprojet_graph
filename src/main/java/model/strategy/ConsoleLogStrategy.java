@@ -1,3 +1,5 @@
+package main.java.model.strategy;
+
 import javafx.scene.control.TextArea;
 
 public class ConsoleLogStrategy implements LogStrategy {

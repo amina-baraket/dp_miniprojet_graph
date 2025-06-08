@@ -1,4 +1,6 @@
 import java.util.*;
+import main.java.model.shapes.Line;
+import main.java.model.shapes.Shape;
 
 public class Graph {
     private Map<Shape, List<Line>> adj;

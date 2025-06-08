@@ -28,7 +28,20 @@ import java.util.List;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class DrawingApp extends Application {
+import main.java.model.shapes.Shape;
+import main.java.model.shapes.Line;
+import main.java.model.shapes.CircleVertex;
+import main.java.model.shapes.SquareVertex;
+import main.java.model.shapes.TriangleVertex;
+import main.java.model.factory.VertexFactory;
+import main.java.model.strategy.LogStrategy;
+import main.java.model.strategy.ConsoleLogStrategy;
+import main.java.model.strategy.FileLogStrategy;
+import main.java.model.strategy.DatabaseLogStrategy;
+import main.java.model.database.DatabaseManager;
+import main.java.model.observer.Observer;
+
+public class DrawingApp extends Application implements Observer {
 
     private List<Shape> shapes = new ArrayList<>();
     private Shape selectedShape = null;
@@ -139,7 +152,8 @@ public class DrawingApp extends Application {
 
         // Add triangle
         addTriangleBtn.setOnAction(e -> {
-            Shape triangle = new Triangle(400, 400, 80);
+            Shape triangle = VertexFactory.createVertex("triangle", 400, 400, 80);
+            triangle.addObserver(this); // Ajouter DrawingApp comme observateur
             shapes.add(triangle);
             log("Added triangle");
             redraw(gc);
@@ -148,7 +162,8 @@ public class DrawingApp extends Application {
 
         // Add circle
         addCircleBtn.setOnAction(e -> {
-            Shape circle = new Circle(200, 200, 40);
+            Shape circle = VertexFactory.createVertex("circle", 200, 200, 40);
+            circle.addObserver(this); // Ajouter DrawingApp comme observateur
             shapes.add(circle);
             log("Added circle");
             redraw(gc);
@@ -157,7 +172,8 @@ public class DrawingApp extends Application {
 
         // Add rectangle
         addRectBtn.setOnAction(e -> {
-            Shape rect = new Rectangle(300, 300, 80, 60);
+            Shape rect = VertexFactory.createVertex("square", 300, 300, 80);
+            rect.addObserver(this); // Ajouter DrawingApp comme observateur
             shapes.add(rect);
             log("Added rectangle");
             redraw(gc);
@@ -408,19 +424,19 @@ public class DrawingApp extends Application {
         heightField.clear();
         radiusField.clear();
 
-        if (selectedShape instanceof Rectangle rect) {
+        if (selectedShape instanceof SquareVertex rect) {
             widthField.setText(String.valueOf(rect.getWidth()));
             heightField.setText(String.valueOf(rect.getHeight()));
-        } else if (selectedShape instanceof Circle circle) {
+        } else if (selectedShape instanceof CircleVertex circle) {
             radiusField.setText(String.valueOf(circle.getRadius()));
-        } else if (selectedShape instanceof Triangle triangle) {
+        } else if (selectedShape instanceof TriangleVertex triangle) {
             radiusField.setText(String.valueOf(triangle.getSize()));
         }
 
     }
 
     private void updateSize() {
-        if (selectedShape instanceof Rectangle rect) {
+        if (selectedShape instanceof SquareVertex rect) {
             try {
                 double newWidth = Double.parseDouble(widthField.getText());
                 double newHeight = Double.parseDouble(heightField.getText());
@@ -430,7 +446,7 @@ public class DrawingApp extends Application {
                 redrawShapes();
             } catch (NumberFormatException ignored) {
             }
-        } else if (selectedShape instanceof Triangle triangle) {
+        } else if (selectedShape instanceof TriangleVertex triangle) {
             try {
                 double newSize = Double.parseDouble(radiusField.getText());
                 triangle.setSize(newSize);
@@ -457,7 +473,9 @@ public class DrawingApp extends Application {
             gc.setLineDashes(5);
 
             // Calculer le point de connexion temporaire pour la ligne de prévisualisation
-            double[] tempPoints = getConnectingPoints(firstShape, new Circle(canvas.getGraphicsContext2D().getCanvas().getWidth() / 2, canvas.getGraphicsContext2D().getCanvas().getHeight() / 2, 0)); // Utiliser la position de la souris
+            // Utiliser une forme temporaire compatible avec le nouveau système de fabrique
+            Shape tempShape = VertexFactory.createVertex("circle", canvas.getGraphicsContext2D().getCanvas().getWidth() / 2, canvas.getGraphicsContext2D().getCanvas().getHeight() / 2, 0);
+            double[] tempPoints = getConnectingPoints(firstShape, tempShape);
             gc.strokeLine(tempPoints[0], tempPoints[1],
                          tempPoints[2], tempPoints[3]);
             gc.setLineDashes(0);
@@ -476,8 +494,8 @@ public class DrawingApp extends Application {
         double endY = y2;
 
         // Logique spécifique pour les cercles (connexion aux bords)
-        if (s1 instanceof Circle) {
-            Circle c1 = (Circle) s1;
+        if (s1 instanceof CircleVertex) {
+            CircleVertex c1 = (CircleVertex) s1;
             double angle = Math.atan2(y2 - y1, x2 - x1);
             startX = x1 + c1.getRadius() * Math.cos(angle);
             startY = y1 + c1.getRadius() * Math.sin(angle);
@@ -492,8 +510,8 @@ public class DrawingApp extends Application {
             }
         }
 
-        if (s2 instanceof Circle) {
-            Circle c2 = (Circle) s2;
+        if (s2 instanceof CircleVertex) {
+            CircleVertex c2 = (CircleVertex) s2;
             double angle = Math.atan2(y1 - y2, x1 - x2);
             endX = x2 + c2.getRadius() * Math.cos(angle);
             endY = y2 + c2.getRadius() * Math.sin(angle);
@@ -706,6 +724,12 @@ public class DrawingApp extends Application {
             return new double[]{px, py};
         }
         return null;
+    }
+
+    @Override
+    public void update() {
+        // Cette méthode est appelée quand une forme change d'état
+        redraw(canvas.getGraphicsContext2D());
     }
 
     public static void main(String[] args) {

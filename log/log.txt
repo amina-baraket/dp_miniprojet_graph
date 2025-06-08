@@ -571,3 +571,214 @@ Log area content saved to file.
 [2025-06-08 02:48:42] Total: 3 connexions
 [2025-06-08 02:48:42] ===============================
 
+[2025-06-08 17:32:09] Log strategy changed to File.
+[2025-06-08 17:32:19] Added circle
+Graphe reconstruit avec 1 nœuds.
+Added rectangle
+Graphe reconstruit avec 2 nœuds.
+Added triangle
+Graphe reconstruit avec 3 nœuds.
+Added circle
+Graphe reconstruit avec 4 nœuds.
+Forme trouvée: Circle aux coordonnées (226.39999999999998, 198.4)
+Nœud de départ sélectionné pour le plus court chemin: Circle (ID: 1)
+Forme trouvée: Circle aux coordonnées (167.20000000000005, 220.8)
+Aucune forme trouvée aux coordonnées (312.79999999999995, 187.2)
+Forme trouvée: Circle aux coordonnées (198.39999999999998, 185.6)
+Aucune forme trouvée aux coordonnées (298.4, 214.4)
+Aucune forme trouvée aux coordonnées (205.60000000000002, 316.0)
+Aucune forme trouvée aux coordonnées (205.60000000000002, 316.0)
+Forme trouvée: Circle aux coordonnées (197.60000000000002, 207.2)
+Forme trouvée: Rectangle aux coordonnées (360.79999999999995, 336.8)
+Nœud d'arrivée sélectionné pour le plus court chemin: Rectangle (ID: 2)
+Moved shape to (361.6, 172.8)
+Connection mode activated
+First shape selected for connection
+Moved shape to (361.6, 172.8)
+Connected shapes with a line
+Graphe reconstruit avec 4 nœuds.
+Moved shape to (361.6, 172.8)
+Connection mode activated
+First shape selected for connection
+Moved shape to (361.6, 172.8)
+Connected shapes with a line
+Graphe reconstruit avec 4 nœuds.
+Moved shape to (361.6, 172.8)
+Connection mode activated
+First shape selected for connection
+Connected shapes with a line
+Graphe reconstruit avec 4 nœuds.
+Toggled distance display
+Toggled distance display
+
+=== Distances entre les formes connectées ===
+Forme trouvée: Circle aux coordonnées (239.4451508266465, 193.36071718759416)
+Forme trouvée: Circle aux coordonnées (322.1548491733535, 179.43928281240585)
+Distance entre Circle et Circle = 83.9 pixels
+Forme trouvée: Circle aux coordonnées (228.2842712474619, 228.2842712474619)
+Forme trouvée: Rectangle aux coordonnées (300.0, 300.0)
+Distance entre Circle et Rectangle = 101.4 pixels
+Forme trouvée: Rectangle aux coordonnées (300.0, 300.0)
+Forme trouvée: Circle aux coordonnées (344.1657274042762, 208.80064081454654)
+Distance entre Rectangle et Circle = 101.3 pixels
+Total: 3 connexions
+===============================
+
+Moved shape to (200.0, 200.0)
+Moved shape to (400.0, 400.0)
+Changed shape color to: 0xe6994dff
+Log strategy changed to Console.
+
+[2025-06-08 17:32:28] Log strategy changed to File.
+[2025-06-08 17:32:30] Added circle
+Graphe reconstruit avec 1 nœuds.
+Added rectangle
+Graphe reconstruit avec 2 nœuds.
+Added triangle
+Graphe reconstruit avec 3 nœuds.
+Added circle
+Graphe reconstruit avec 4 nœuds.
+Forme trouvée: Circle aux coordonnées (226.39999999999998, 198.4)
+Nœud de départ sélectionné pour le plus court chemin: Circle (ID: 1)
+Forme trouvée: Circle aux coordonnées (167.20000000000005, 220.8)
+Aucune forme trouvée aux coordonnées (312.79999999999995, 187.2)
+Forme trouvée: Circle aux coordonnées (198.39999999999998, 185.6)
+Aucune forme trouvée aux coordonnées (298.4, 214.4)
+Aucune forme trouvée aux coordonnées (205.60000000000002, 316.0)
+Aucune forme trouvée aux coordonnées (205.60000000000002, 316.0)
+Forme trouvée: Circle aux coordonnées (197.60000000000002, 207.2)
+Forme trouvée: Rectangle aux coordonnées (360.79999999999995, 336.8)
+Nœud d'arrivée sélectionné pour le plus court chemin: Rectangle (ID: 2)
+Moved shape to (361.6, 172.8)
+Connection mode activated
+First shape selected for connection
+Moved shape to (361.6, 172.8)
+Connected shapes with a line
+Graphe reconstruit avec 4 nœuds.
+Moved shape to (361.6, 172.8)
+Connection mode activated
+First shape selected for connection
+Moved shape to (361.6, 172.8)
+Connected shapes with a line
+Graphe reconstruit avec 4 nœuds.
+Moved shape to (361.6, 172.8)
+Connection mode activated
+First shape selected for connection
+Connected shapes with a line
+Graphe reconstruit avec 4 nœuds.
+Toggled distance display
+Toggled distance display
+
+=== Distances entre les formes connectées ===
+Forme trouvée: Circle aux coordonnées (239.4451508266465, 193.36071718759416)
+Forme trouvée: Circle aux coordonnées (322.1548491733535, 179.43928281240585)
+Distance entre Circle et Circle = 83.9 pixels
+Forme trouvée: Circle aux coordonnées (228.2842712474619, 228.2842712474619)
+Forme trouvée: Rectangle aux coordonnées (300.0, 300.0)
+Distance entre Circle et Rectangle = 101.4 pixels
+Forme trouvée: Rectangle aux coordonnées (300.0, 300.0)
+Forme trouvée: Circle aux coordonnées (344.1657274042762, 208.80064081454654)
+Distance entre Rectangle et Circle = 101.3 pixels
+Total: 3 connexions
+===============================
+
+Moved shape to (200.0, 200.0)
+Moved shape to (400.0, 400.0)
+Changed shape color to: 0xe6994dff
+Log strategy changed to Console.
+Log area content saved to file.
+
+[2025-06-08 17:32:30] Log area content saved to file.
+[2025-06-08 17:33:15] Moved shape to (300.0, 300.0)
+[2025-06-08 17:33:23] Resized rectangle to 40.0x20.0
+[2025-06-08 17:33:27] Moved shape to (400.0, 400.0)
+[2025-06-08 17:33:30] Resized triangle to size 40.0
+[2025-06-08 17:33:59] Moved shape to (200.0, 200.0)
+[2025-06-08 17:34:00] Mode sélection du nœud de départ activé.
+[2025-06-08 17:34:03] Veuillez d'abord sélectionner le nœud de départ.
+[2025-06-08 17:34:05] Mode sélection du nœud de départ activé.
+[2025-06-08 17:34:06] Forme trouvée: Circle aux coordonnées (214.39999999999998, 205.6)
+[2025-06-08 17:34:06] Nœud de départ sélectionné pour le plus court chemin: Circle (ID: 4)
+[2025-06-08 17:34:06] Moved shape to (200.0, 200.0)
+[2025-06-08 17:34:08] Mode sélection du nœud d'arrivée activé.
+[2025-06-08 17:34:09] Point dans la boîte englobante mais pas dans la forme: Rectangle aux coordonnées (343.20000000000005, 308.8)
+[2025-06-08 17:34:09] Aucune forme trouvée aux coordonnées (343.20000000000005, 308.8)
+[2025-06-08 17:34:09] Moved shape to (200.0, 200.0)
+[2025-06-08 17:34:10] Forme trouvée: Rectangle aux coordonnées (336.0, 310.4)
+[2025-06-08 17:34:10] Nœud d'arrivée sélectionné pour le plus court chemin: Rectangle (ID: 2)
+[2025-06-08 17:34:10] Moved shape to (200.0, 200.0)
+[2025-06-08 17:34:13] Calcul du plus court chemin...
+[2025-06-08 17:34:13] Plus court chemin trouvé: Circle(4) -> Rectangle(2) (Distance: 101.4)
+[2025-06-08 18:11:59] Added circle
+Graphe reconstruit avec 1 nœuds.
+Added rectangle
+Graphe reconstruit avec 2 nœuds.
+Added rectangle
+Graphe reconstruit avec 3 nœuds.
+Aucune forme trouvée aux coordonnées (342.4, 187.2)
+Forme trouvée: CircleVertex aux coordonnées (207.20000000000005, 182.4)
+Nœud de départ sélectionné pour le plus court chemin: CircleVertex (ID: 1)
+Forme trouvée: SquareVertex aux coordonnées (355.20000000000005, 318.4)
+Nœud d'arrivée sélectionné pour le plus court chemin: SquareVertex (ID: 2)
+Moved shape to (127.20000000000005, 319.2)
+Connection mode activated
+Moved shape to (127.20000000000005, 319.2)
+First shape selected for connection
+Moved shape to (127.20000000000005, 319.2)
+Connected shapes with a line
+Graphe reconstruit avec 3 nœuds.
+Moved shape to (130.39999999999998, 304.0)
+Connection mode activated
+First shape selected for connection
+Moved shape to (151.20000000000005, 187.2)
+Connected shapes with a line
+Graphe reconstruit avec 3 nœuds.
+Moved shape to (284.0, 308.0)
+Moved shape to (78.39999999999998, 351.2)
+Connection mode activated
+First shape selected for connection
+Moved shape to (78.39999999999998, 351.2)
+Connected shapes with a line
+Graphe reconstruit avec 3 nœuds.
+Moved shape to (56.799999999999955, 326.4)
+Moved shape to (67.19999999999993, 349.59999999999997)
+Moved shape to (67.19999999999993, 349.59999999999997)
+
+[2025-06-08 18:12:04] Log strategy changed to File.
+[2025-06-08 18:12:07] Added circle
+Graphe reconstruit avec 1 nœuds.
+Added rectangle
+Graphe reconstruit avec 2 nœuds.
+Added rectangle
+Graphe reconstruit avec 3 nœuds.
+Aucune forme trouvée aux coordonnées (342.4, 187.2)
+Forme trouvée: CircleVertex aux coordonnées (207.20000000000005, 182.4)
+Nœud de départ sélectionné pour le plus court chemin: CircleVertex (ID: 1)
+Forme trouvée: SquareVertex aux coordonnées (355.20000000000005, 318.4)
+Nœud d'arrivée sélectionné pour le plus court chemin: SquareVertex (ID: 2)
+Moved shape to (127.20000000000005, 319.2)
+Connection mode activated
+Moved shape to (127.20000000000005, 319.2)
+First shape selected for connection
+Moved shape to (127.20000000000005, 319.2)
+Connected shapes with a line
+Graphe reconstruit avec 3 nœuds.
+Moved shape to (130.39999999999998, 304.0)
+Connection mode activated
+First shape selected for connection
+Moved shape to (151.20000000000005, 187.2)
+Connected shapes with a line
+Graphe reconstruit avec 3 nœuds.
+Moved shape to (284.0, 308.0)
+Moved shape to (78.39999999999998, 351.2)
+Connection mode activated
+First shape selected for connection
+Moved shape to (78.39999999999998, 351.2)
+Connected shapes with a line
+Graphe reconstruit avec 3 nœuds.
+Moved shape to (56.799999999999955, 326.4)
+Moved shape to (67.19999999999993, 349.59999999999997)
+Moved shape to (67.19999999999993, 349.59999999999997)
+Log area content saved to file.
+
+[2025-06-08 18:12:10] Log strategy changed to File.

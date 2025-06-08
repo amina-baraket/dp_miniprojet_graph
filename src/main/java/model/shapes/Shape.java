@@ -1,8 +1,15 @@
+package main.java.model.shapes;
+
 import javafx.geometry.Bounds;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
+import main.java.model.shapes.Drawable;
+import main.java.model.observer.Observable;
+import main.java.model.observer.Observer;
+import java.util.ArrayList;
+import java.util.List;
 
-public abstract class Shape implements Drawable{
+public abstract class Shape implements Drawable, Observable {
 
     protected double x, y;
     protected double rotation = 0;
@@ -13,6 +20,7 @@ public abstract class Shape implements Drawable{
     protected boolean highlighted;
     protected int id;
     private static int nextId = 1;
+    private List<Observer> observers = new ArrayList<>();
 
     public Shape(double x, double y) {
         this.x = x;
@@ -49,6 +57,7 @@ public abstract class Shape implements Drawable{
     @Override
     public void setSelected(boolean selected) {
         this.selected = selected;
+        notifyObservers();
     }
 
     @Override
@@ -62,8 +71,10 @@ public abstract class Shape implements Drawable{
         return highlighted;
     }
 
+    @Override
     public void setHighlight(boolean highlighted) {
         this.highlighted = highlighted;
+        notifyObservers();
     }
 
     @Override
@@ -82,5 +93,22 @@ public abstract class Shape implements Drawable{
 
     public static void resetNextId() {
         nextId = 1;
+    }
+
+    @Override
+    public void addObserver(Observer observer) {
+        observers.add(observer);
+    }
+
+    @Override
+    public void removeObserver(Observer observer) {
+        observers.remove(observer);
+    }
+
+    @Override
+    public void notifyObservers() {
+        for (Observer observer : observers) {
+            observer.update();
+        }
     }
 }

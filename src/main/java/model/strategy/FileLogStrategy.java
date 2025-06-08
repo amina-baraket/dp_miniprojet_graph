@@ -1,3 +1,5 @@
+package main.java.model.strategy;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;

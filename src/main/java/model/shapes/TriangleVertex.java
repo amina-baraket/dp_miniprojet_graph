@@ -1,12 +1,14 @@
+package main.java.model.shapes;
+
 import javafx.geometry.BoundingBox;
 import javafx.geometry.Bounds;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
-public class Triangle extends Shape {
+public class TriangleVertex extends Shape {
     private double size;
 
-    public Triangle(double x, double y, double size) {
+    public TriangleVertex(double x, double y, double size) {
         super(x, y);
         this.size = size;
     }

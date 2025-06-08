@@ -1,3 +1,5 @@
+package main.java.model.shapes;
+
 import javafx.geometry.BoundingBox;
 import javafx.geometry.Bounds;
 import javafx.scene.canvas.GraphicsContext;
